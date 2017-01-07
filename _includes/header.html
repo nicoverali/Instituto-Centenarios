@@ -14,11 +14,11 @@
                 {% assign half_length = page.nav_array | size | divided_by: 2 %}
                   {% if even_odd == 0 %}
                     {% if forloop.index <= half_length %}
-                    <a class="nav-sections" href="../{{item.url}}">{{item.name}}</a>
+                    <a class="nav-sections" href="{{site.baseurl}}/{{item.url}}">{{item.name}}</a>
                     {% endif %}
                     {% assign is_even = true %}
                   {% else %}
-                    <a class="nav-sections" href="../{{item.url}}">{{item.name}}</a>
+                    <a class="nav-sections" href="{{site.baseurl}}/{{item.url}}">{{item.name}}</a>
                     {% assign is_even = false %}
                   {% endif %}
               {% endfor %}
@@ -33,7 +33,7 @@
               {% if is_even %}
 
                  {% for item in page.nav_array offset: half_length %}
-                    <a class="nav-sections" href="../{{item.url}}">{{item.name}}</a>
+                    <a class="nav-sections" href="{{site.baseurl}}/{{item.url}}">{{item.name}}</a>
                  {% endfor %}
 
               {% endif %}
