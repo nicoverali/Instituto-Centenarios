@@ -1,0 +1,46 @@
+<!-- Section: HEADER -->
+    <header>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="logo">
+              <img src="/assets/img/logo.png" alt="Escudo">
+              <h2>Instituto<br>Centenarios</h2>
+            </div>
+            <nav>
+              {% for item in page.nav_array %}
+                {% assign even_odd = page.nav_array | size | modulo:2 %}
+                {% assign half_length = page.nav_array | size | divided_by: 2 %}
+                  {% if even_odd == 0 %}
+                    {% if forloop.index <= half_length %}
+                    <a class="nav-sections" href="/{{item.url}}">{{item.name}}</a>
+                    {% endif %}
+                    {% assign is_even = true %}
+                  {% else %}
+                    <a class="nav-sections" href="/{{item.url}}">{{item.name}}</a>
+                    {% assign is_even = false %}
+                  {% endif %}
+              {% endfor %}
+
+              {% if page.show_home %}
+              <div>
+                <a href="/index.html" class="nav-home-icon">{% include _svg/_homesvg.html %}</a>
+              </div>
+
+              {% endif %}
+
+              {% if is_even %}
+
+                 {% for item in page.nav_array offset: half_length %}
+                    <a class="nav-sections" href="/pages/{{item.url}}">{{item.name}}</a>
+                 {% endfor %}
+
+              {% endif %}
+
+              <a class="burguer-nav">{% include _svg/_burguersvg.html %}</a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>

@@ -1,0 +1,65 @@
+.wrapper
+  .title-row
+    text-align: center
+    margin-bottom: 60px
+  &.container
+    border-bottom-left-radius: 20px
+    border-bottom-right-radius: 20px
+
+.title-row
+  hr
+    border-bottom: 1px solid $mainC
+    width: 40%
+    min-width: 300px
+
+.category-div
+  padding: 40px
+  margin-bottom: 40px
+  img, svg
+    position: absolute
+    top: 50%
+    right: 50px
+    width: 180px
+    height: auto
+    margin-top: -90px
+  p
+    margin: 20px 0px 30px
+  h2:before
+    content: " "
+    display: inline-block
+    height: 22px
+    margin-right: 10px
+    border-right: 3px solid $mainC
+
+.container-fluid
+  &.grey-container
+    height: 50px
+    z-index: -5
+section
+  &.grey-container
+    padding-bottom: 50px
+
+@media screen and (max-width: 991px)
+  .wrapper
+    p
+      max-width: 300px
+
+@media screen and (max-width: 767px)
+  .wrapper
+    p
+      max-width: initial
+    &.container
+      border-bottom-left-radius: 0px
+      border-bottom-right-radius: 0px
+
+  .category-div
+    img, svg
+      position: static
+      margin-top: 0px
+      width: 80px
+    h2::before
+      content: " "
+      display: none
+  section
+    &.grey-container
+      padding-bottom: 0px

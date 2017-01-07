@@ -1,0 +1,14 @@
+markdown: kramdown
+title: Base Project
+author: Vera Maximiliano J.
+description: Base Branding Project
+keywords: Base, Branding, Project
+exclude: ['README.md']
+sass:
+    sass_dir: _sass
+    style: compressed
+
+port: 8080
+
+collections:
+  videos-cortometrajes:

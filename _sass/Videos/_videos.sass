@@ -1,0 +1,107 @@
+.wrapper
+  padding: 15px 0px 60px
+.back-row
+  text-align: left
+  padding-left: 0px
+  h3
+    display: inline-block
+    margin: 0px 0px 0px 10px
+    vertical-align: top
+    line-height: 41px
+  h3:before
+    content: " "
+    display: inline-block
+    vertical-align: top
+    height: 44px
+    width: 1px
+    margin-right: 10px
+    background-color: $mainC
+
+  svg
+    display: inline-block
+    width: 40px
+    path
+      fill: $mainC
+
+.categories-row
+  text-align: center
+  margin-top: 30px
+  svg
+    width: 80px
+    height: auto
+    display: inline-block
+    margin: 0px 50px
+  svg
+    pointer-events: none
+  svg:hover
+    path, circle
+      fill: lighten($mainC, 5)
+
+  .svg-container
+    display: inline-block
+    position: relative
+    text-align: center
+  .svg-container:after
+    content: " "
+    display: block
+    position: relative
+    top: 100%
+    margin: 20px 0px 0px -40px
+    left: 50%
+    border-left: 40px solid transparent
+    border-right: 40px solid transparent
+    border-bottom: 30px solid $light-grey
+    width: 0px
+    height: 0px
+  .svg-container:hover
+    svg
+      path, circle
+        fill: $mainC        
+
+.videos-row
+  text-align: left
+  > div
+    padding: 40px 0px 0px
+  .category-container
+    display: none
+    &.show
+      display: block
+  h2
+    text-align: center
+  hr
+    width: 30%
+    border: 1px solid $mainC
+  ul
+    list-style-type: none
+    padding: 0px
+    li.year-container
+      margin: 10px 0px
+      p.year
+        display: inline-block
+        margin: 10px 25px
+        vertical-align: top
+      p.year:before
+        content: " "
+        display: inline-block
+        position: relative
+        width: 0
+        height: 0
+        border-bottom: 6px solid transparent
+        border-top: 6px solid transparent
+        border-left: 5px solid $mainC
+        vertical-align: initial
+        margin-right: 10px
+      .video-container
+        display: block
+        text-align: center
+
+
+@media screen and (max-width: 991px)
+  .categories-row
+    svg
+      margin: 0px 40px
+
+@media screen and (max-width: 767px)
+  .back-row
+    h3, h3:before
+      display: none

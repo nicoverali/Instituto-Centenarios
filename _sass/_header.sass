@@ -1,0 +1,103 @@
+header
+  background: $mainC
+  position: fixed
+  width: 100%
+  max-height: 55px
+  top: 0
+  left: 0
+  z-index: 10
+  -webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.75)
+  -moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.75)
+  transition: max-height 300ms ease-in-out
+  overflow: hidden
+  .row
+    text-align: center
+  nav
+    font-size: 0px
+    a
+      display: inline-block
+      padding: 18.875px 15px
+      margin: 0px 35px
+      font-family: "DinPro" , "Open Sans" , arial
+      text-transform: uppercase
+      color: white
+      height: 55px
+      vertical-align: top
+      img,svg
+        width: 30px
+        height: auto
+      &.nav-home-icon, &.burguer-nav
+        padding: 12.5px 15px
+    a:hover
+      background: rgba(255,255,255,0.15)
+      border-bottom: 2px solid white
+
+    .nav-home-icon
+      &.hide-responsive
+        display: none
+    .burguer-nav
+      display: none
+    div
+      display: inline-block
+
+.logo
+  position: absolute
+  top: 0
+  left: 10px
+  img
+    height: 50px
+    float: left
+    margin-right: 15px
+    margin-top: 2.5px
+  h2:before
+    content: " "
+    display: block
+    position: absolute
+    height: 35px
+    border-left: 1px solid white
+    top: 10px
+    right: 112px
+  h2
+    font-size: 13px
+    text-transform: uppercase
+    letter-spacing: 2px
+    float: right
+    text-align: left
+    color: white
+    margin-top: 13px
+
+@media screen and (max-width: 991px)
+  header
+    &.opened
+      max-height: 500px
+    nav
+      padding-top: 55px
+      a
+        display: block
+        &.nav-sections
+          margin: 0px -15px
+          padding: 19px 15px
+          border: 0px solid
+        &.nav-sections:nth-of-type(1):not(.nav-home-icon)
+          background-color: darken($mainC, 4)
+        &.nav-sections:nth-of-type(2):not(.nav-home-icon)
+          background-color: darken($mainC, 8)
+        &.nav-sections:nth-of-type(3):not(.nav-home-icon)
+          background-color: darken($mainC, 12)
+        &.nav-sections:hover
+          border-bottom: 1px solid white
+        img, svg
+          width: 25px
+        &.burguer-nav , &.nav-home-icon
+          display: inline-block
+          background-color: rgba(255,255,255,0.0)
+          position: absolute
+          padding: 15px 15px
+          right: 0
+          top: 0
+          margin-right: 0px
+        &.burguer-nav:hover , &.nav-home-icon:hover
+          background: rgba(255,255,255,0)
+          border-bottom: 0px solid white
+        &.nav-home-icon
+          right: 50px

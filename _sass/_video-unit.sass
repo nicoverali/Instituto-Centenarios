@@ -1,0 +1,95 @@
+.video-unit
+  background-color: #333
+  position: relative
+  width: 455px
+  height: 265px
+  display: inline-block
+  vertical-align: top
+  padding: 20px
+  margin: 10px 5px
+  h2
+    text-align: center
+    color: white
+    margin: 0px 0px 15px
+  hr
+    color: $mainC
+    border: 1px solid $mainC
+    width: 60%
+  time
+    display: block
+    text-align: center
+    color: #95999A
+  section.participantes
+    display: inline-block
+    color: white
+    position: absolute
+    top: 40%
+    left: 5%
+    h3
+      margin-bottom: 0px
+      text-align: left
+    ul
+      max-width: 200px
+      display: inline-block
+      list-style-type: none
+      text-align: left
+      padding: 0px
+      margin: 0px 25px 0px 0px
+      &.right-ul-participantes
+        float: right
+      li
+        margin: 10px 0px
+        p
+          padding: 0px
+          margin: 0px
+          display: inline-block
+      li::before
+        content: " "
+        display: inline-block
+        vertical-align: middle
+        width: 5px
+        height: 5px
+        border: 0.5px solid white
+        border-radius: 20px
+        margin-right: 5px
+  svg
+    width: 60px
+    height: auto
+    position: absolute
+    bottom: 6%
+    right: 8%
+    path
+      fill: $mainC
+
+@media screen and (max-width: 1199px)
+  .video-unit
+    width: 355px
+    height: 230px
+    section.participantes
+      left: 3%
+      h3
+        font-size: 18px
+      ul
+        margin-right: 20px
+        li
+          p
+            font-size: 13px
+    svg
+      right: 5%
+@media screen and (max-width: 767px)
+  .video-unit
+    width: 330px
+    h2
+      font-size: 28px
+    section.participantes
+      top: 50%
+      h3
+        font-size: 16px
+      ul
+        margin-right: 20px
+        li
+          margin: 5px 0px
+          p
+            font-size: 11px
+    svg
+      right: 5%

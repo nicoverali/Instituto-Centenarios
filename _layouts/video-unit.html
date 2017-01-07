@@ -1,0 +1,23 @@
+<figure class="video-unit">
+  <h2>{{ page.title }}</h2>
+  <hr>
+  <time>{{ page.fecha }}</time>
+  <section class="participantes">
+    <h3>Participantes :</h3>
+    <ul>
+      {% for participantes in page.participantes limit: 3 %}
+      <li><p>{{participantes}}</p></li>
+      {% endfor %}
+    </ul>
+    {% assign participantes_size = page.participantes | size  %}
+    {% if participantes_size > 3 %}
+    <ul class="right-ul-participantes">
+      {% for participantes in page.participantes offset: 3 limit: 3%}
+      <li><p>{{participantes}}</p></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% include _svg/_playsvg.html %}
+
+</figure>
