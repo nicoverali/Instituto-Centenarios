@@ -108,10 +108,36 @@ section.grey-container
 
 @media screen and (max-width: 991px)
   .categories-row
-    svg
+    .category-icon-container
       margin: 0px 40px
 
 @media screen and (max-width: 767px)
   .back-row
     h3, h3:before
       display: none
+  .categories-row
+    svg
+      width: 60px
+    .category-icon-container
+      margin: 0px 30px
+    .category-icon-container:after
+      border-left: 30px solid transparent
+      border-right: 30px solid transparent
+      border-bottom: 22.5px solid $light-grey
+      margin: 20px 0px 0px -30px
+  .videos-row
+    > div
+      margin-left: 2%
+      width: 96%
+
+@media screen and (max-width: 540px)
+  .categories-row
+    svg
+      width: 50px
+    .category-icon-container
+      margin: 0px 10px
+    .category-icon-container:after
+      border-left: 25px solid transparent
+      border-right: 25px solid transparent
+      border-bottom: 18.75px solid $light-grey
+      margin: 20px 0px 0px -25px
