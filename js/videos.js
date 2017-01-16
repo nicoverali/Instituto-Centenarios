@@ -10,6 +10,7 @@ var videosContainers
 
 //GLOBAL VARIABLE FOR VIDEOPLAYER MODAL
 var playButtons
+var video
 
 window.addEventListener("DOMContentLoaded", function(){
   //Setting variables, and adding listeners for svg categories selectors
@@ -30,6 +31,7 @@ window.addEventListener("DOMContentLoaded", function(){
   }
 
   //Setting variable and listener for videplayer modal
+  video = document.getElementById("video");
   playButtons = document.getElementsByClassName("playbutton")
   for (var i = 0; i < playButtons.length; i++) {
     playButtons[i].addEventListener("click", videoModal)
@@ -72,6 +74,8 @@ function dropList(item){
 }
 
 function videoModal(item){
-  var name = item.target.getAttribute("videourl");
-  console.log(name);
+  var commonUrl = "http://www.dailymotion.com/embed/video/"
+  var url = item.target.getAttribute("videourl");
+  console.log(url);
+  video.setAttribute("src" , commonUrl + url + "?autoPlay=1")
 }
