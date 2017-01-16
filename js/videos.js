@@ -8,6 +8,9 @@ var iconContainers
 var years
 var videosContainers
 
+//GLOBAL VARIABLE FOR VIDEOPLAYER MODAL
+var playButtons
+
 window.addEventListener("DOMContentLoaded", function(){
   //Setting variables, and adding listeners for svg categories selectors
   svgContainer = document.getElementsByClassName("svg-container");
@@ -26,6 +29,11 @@ window.addEventListener("DOMContentLoaded", function(){
     years[i].addEventListener("click", dropList)
   }
 
+  //Setting variable and listener for videplayer modal
+  playButtons = document.getElementsByClassName("playbutton")
+  for (var i = 0; i < playButtons.length; i++) {
+    playButtons[i].addEventListener("click", videoModal)
+  }
 
 })
 
@@ -61,4 +69,9 @@ function dropList(item){
   else {
     item.target.className = "year"
   }
+}
+
+function videoModal(item){
+  var name = item.target.getAttribute("videourl");
+  console.log(name);
 }

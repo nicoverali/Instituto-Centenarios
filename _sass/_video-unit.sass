@@ -52,14 +52,18 @@
         border: 0.5px solid white
         border-radius: 20px
         margin-right: 5px
-  svg
+  .playbutton
     width: 60px
-    height: auto
+    height: 60px
     position: absolute
     bottom: 6%
     right: 8%
-    path
-      fill: $mainC
+    svg
+      width: 100%
+      height: 100%
+      pointer-events: none
+      path
+        fill: $mainC
 
 @media screen and (max-width: 1199px)
   .video-unit

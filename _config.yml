@@ -1,7 +1,7 @@
 markdown: kramdown
 title: Base Project
 author: Vera Maximiliano J.
-baseurl: /Instituto-Centenarios
+baseurl: 
 description: Base Branding Project
 keywords: Base, Branding, Project
 exclude: ['README.md']

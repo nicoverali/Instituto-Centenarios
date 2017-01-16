@@ -41,6 +41,10 @@ section.grey-container
     margin: 0px 50px
     &.show::after
       display: block
+    &.show
+      svg
+        path, circle
+          fill: $mainC
   .category-icon-container:after
     content: " "
     display: none
@@ -54,6 +58,10 @@ section.grey-container
     width: 0px
     height: 0px
   .svg-container:hover
+    svg
+      path, circle
+        fill: lighten($mainC, 20)
+  .svg-container:active
     svg
       path, circle
         fill: $mainC
