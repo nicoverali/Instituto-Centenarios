@@ -80,6 +80,24 @@ permalink: /videos/
             <li class="year-container">
               <p class="year">2011</p>
               <div class="video-container">
+                <div class="videos-list">
+                  {% for video in site.videos-cortometrajes %}
+                    {% if video.fecha == 2011 %}
+                      {{video}}
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="more-close">
+                  <a class="close-videos">
+                    {% include _svg/_cancelsvg.html %}
+                    <p>Cerrar</p>
+                  </a>
+                  <a class="more-videos">
+                    {% include _svg/_plusiconsvg.html %}
+                    <p>Más videos</p>
+                  </a>
+                </div>
+                <hr class="video-separation-hr">                
               </div>
             </li>
             <li class="year-container">

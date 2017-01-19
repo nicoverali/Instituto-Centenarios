@@ -114,7 +114,7 @@ section.grey-container
         &.show
           display: block
         .videos-list
-          max-height: 0px
+          max-height: 10000px
           overflow: hidden
           transition: all 1s ease-in-out
         hr.video-separation-hr
@@ -211,6 +211,10 @@ section.modal-window
         width: 50%
 
 @media screen and (max-width: 540px)
+  .wrapper
+    height: 100%
+    border-bottom-left-radius: 0px
+    border-bottom-right-radius: 0px
   .categories-row
     svg
       width: 50px
