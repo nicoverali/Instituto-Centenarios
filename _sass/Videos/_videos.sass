@@ -1,10 +1,10 @@
 section.grey-container
-  min-height: 1000px
+  min-height: calc(100vh - 108px)
 .wrapper
   padding: 15px 0px 60px
   border-bottom-left-radius: 20px
   border-bottom-right-radius: 20px
-  min-height: 500px
+  min-height: 50%
 .back-row
   text-align: left
   padding-left: 0px
@@ -45,6 +45,15 @@ section.grey-container
       svg
         path, circle
           fill: $mainC
+  .category-icon-container:not(.show)
+    .svg-container:hover
+      svg
+        path, circle
+          fill: lighten($mainC, 20)
+    .svg-container:active
+      svg
+        path, circle
+          fill: $mainC
   .category-icon-container:after
     content: " "
     display: none
@@ -57,14 +66,6 @@ section.grey-container
     border-bottom: 30px solid $light-grey
     width: 0px
     height: 0px
-  .svg-container:hover
-    svg
-      path, circle
-        fill: lighten($mainC, 20)
-  .svg-container:active
-    svg
-      path, circle
-        fill: $mainC
 
 .videos-row
   text-align: left
@@ -77,14 +78,14 @@ section.grey-container
     &.show
       display: block
       margin: 40px 0px 0px
-  h2
-    text-align: center
-  hr
-    width: 30%
-    border: 1px solid $mainC
-  ul
-    list-style-type: none
-    padding: 0px
+    h2
+      text-align: center
+    > hr
+      width: 30%
+      border: 1px solid $mainC
+    ul
+      list-style-type: none
+      padding: 0px
     li.year-container
       margin: 10px 0px
       p.year
@@ -112,8 +113,77 @@ section.grey-container
         text-align: center
         &.show
           display: block
+        .videos-list
+          max-height: 0px
+          overflow: hidden
+          transition: all 1s ease-in-out
+        hr.video-separation-hr
+          border: 0
+          height: 0
+          border-top: 1px solid rgba(0, 0, 0, 0.1)
+          border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+          width: 90%
+        .more-close
+          a
+            display: inline-block
+            &.more-videos
+              svg
+                width: 28px
+            svg
+              width: 25px
+              height: auto
+              margin: 20px 40px 0px
+              pointer-events: none
+            p
+              color: $mainC
+              margin: 0px
+              pointer-events: none
+section.modal-window
+  position: fixed
+  display: none
+  width: 100%
+  height: 100%
+  z-index: 10
+  left: 0
+  top: 0
+  font-size: 0px
+  background-color: rgba(0, 0, 0, 0.5)
+  &.show
+    display: initial
+  .modal-container
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translateY(-50%) translateX(-50%)
+    .modal-video-container
+      box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.2)
+      iframe
+        width: 800px
+        height: 450px
 
-
+    .close-modal
+      display: block
+      position: relative
+      background-color: $mainC
+      height: 30px
+      border-bottom-left-radius: 15px
+      border-bottom-right-radius: 15px
+      cursor: pointer
+      p
+        margin: 0px
+        text-align: center
+        font-family: "Open Sans"
+        color: white
+        position: relative
+        top: 50%
+        transform: translateY(-50%)
+@media screen and (max-width: 1169px)
+  section.modal-window
+    .modal-container
+      .modal-video-container
+        iframe
+          width: 560px
+          height: 315px
 @media screen and (max-width: 991px)
   .categories-row
     .category-icon-container
@@ -151,3 +221,9 @@ section.grey-container
       border-right: 25px solid transparent
       border-bottom: 18.75px solid $light-grey
       margin: 20px 0px 0px -25px
+  section.modal-window
+    .modal-container
+      .modal-video-container
+        iframe
+          width: 320px
+          height: 180px
