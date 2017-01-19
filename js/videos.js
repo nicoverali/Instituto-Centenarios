@@ -159,7 +159,7 @@ function loadMoreVideos(item){
 }
 
 function videoModal(item){
-  var commonUrl = "http://www.dailymotion.com/embed/video/";
+  var commonUrl = "https://www.dailymotion.com/embed/video/";
   var url = item.target.getAttribute("videourl");
   video.setAttribute("src" , commonUrl + url + "?autoPlay=1");
   modalWindow.className = "modal-window show";
@@ -171,7 +171,7 @@ function videoModal(item){
 }
 
 function closeModalFunction(){
-  var commonUrl = "http://www.dailymotion.com/embed";
+  var commonUrl = "https://www.dailymotion.com/embed";
   video.setAttribute("src" , "");
   modalWindow.className = "modal-window";
   video.setAttribute("src" , commonUrl);
