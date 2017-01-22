@@ -190,14 +190,23 @@ function loadMoreVideos(item){
 }
 
 function videoModal(item){
+
   var commonUrl = "https://www.dailymotion.com/embed/video/";
   var url = item.target.getAttribute("videourl");
   video.setAttribute("src" , commonUrl + url + "?autoPlay=1");
   modalWindow.className = "modal-window show";
-  scrollY = window.scrollY;
+
+  document.getElementsByTagName('html')[0].className = "not-scroll";
+/*  scrollY = window.scrollY;
   scrollX = window.scrollX;
-  window.addEventListener("scroll", notScroll)
-  document.body.addEventListener('touchmove', notScrollMobile);
+  document.body.className = "videos block"
+  window.addEventListener("scroll", notScroll)*/
+  document.getElementsByTagName("html")[0].addEventListener('touchmove', notScrollMobile);
+  window.addEventListener("touchstart", function(event){
+               if(event.target.tagName=="HTML" || event.target.tagName=="BODY"){
+                       event.preventDefault();
+               }
+  } ,false);
 
 }
 
@@ -206,8 +215,9 @@ function closeModalFunction(){
   video.setAttribute("src" , "");
   modalWindow.className = "modal-window";
   video.setAttribute("src" , commonUrl);
-  window.removeEventListener("scroll", notScroll);
-  document.body.removeEventListener('touchmove', notScrollMobile);
+  document.getElementsByTagName('html')[0].className = "";
+  /*window.removeEventListener("scroll", notScroll);*/
+  document.getElementsByTagName("html")[0].removeEventListener('touchmove', notScrollMobile);
 }
 
 function notScroll(){
