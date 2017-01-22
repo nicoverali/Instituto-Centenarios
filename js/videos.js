@@ -59,7 +59,38 @@ window.addEventListener("DOMContentLoaded", function(){
   }
   closeModal.addEventListener("click", closeModalFunction)
 
+  //Run function to open category on start
+  categoryonstart(window.location.toString())
 })
+
+function categoryonstart(url){
+  var cat = url;
+  cat = /\?v=(\w{1,4})/g.exec(cat)
+  cat = cat[1]
+
+  switch (cat) {
+    case "cort":
+      containers[0].className = "category-container show";
+      iconContainers[0].className = "category-icon-container show";
+      break;
+    case "vpoe":
+      containers[1].className = "category-container show";
+      iconContainers[1].className = "category-icon-container show";
+      break;
+    case "cpat":
+      containers[2].className = "category-container show";
+      iconContainers[2].className = "category-icon-container show";
+      break;
+    case "cort":
+      containers[3].className = "category-container show";
+      iconContainers[3].className = "category-icon-container show";
+      break;
+    default:
+
+  }
+
+}
+
 
 function activateContainer(item){
   for (var i = 0; i < containers.length; i++) {
