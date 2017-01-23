@@ -54,67 +54,38 @@ permalink: /videos/
           <h2 class="category-title">Cortometrajes</h2>
           <hr>
           <ul>
-            <li class="year-container">
-              <p class="year">2010</p>
-              <div class="video-container">
-                <div class="videos-list">
-                  {% for video in site.videos-cortometrajes %}
-                    {% if video.fecha == 2010 %}
-                      {{video}}
-                    {% endif %}
-                  {% endfor %}
+            {% for video in site.videos-cortometrajes %}
+              {% if forloop.first == true %}
+                {% assign actualYear = video.fecha %}
+              {% elsif video.fecha == actualYear %}
+                {% continue %}
+              {% else %}
+                {% assign actualYear = video.fecha %}
+              {% endif %}
+              <li class="year-container">
+                <p class="year">{{actualYear}}</p>
+                <div class="video-container">
+                  <div class="videos-list">
+                    {% for videounit in site.videos-cortometrajes %}
+                      {% if videounit.fecha == actualYear %}
+                        {{videounit}}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  <div class="more-close">
+                    <a class="close-videos">
+                      {% include _svg/_cancelsvg.html %}
+                      <p>Cerrar</p>
+                    </a>
+                    <a class="more-videos">
+                      {% include _svg/_plusiconsvg.html %}
+                      <p>Más videos</p>
+                    </a>
+                  </div>
+                  <hr class="video-separation-hr">
                 </div>
-                <div class="more-close">
-                  <a class="close-videos">
-                    {% include _svg/_cancelsvg.html %}
-                    <p>Cerrar</p>
-                  </a>
-                  <a class="more-videos">
-                    {% include _svg/_plusiconsvg.html %}
-                    <p>Más videos</p>
-                  </a>
-                </div>
-                <hr class="video-separation-hr">
-              </div>
-            </li>
-            <li class="year-container">
-              <p class="year">2011</p>
-              <div class="video-container">
-                <div class="videos-list">
-                  {% for video in site.videos-cortometrajes %}
-                    {% if video.fecha == 2011 %}
-                      {{video}}
-                    {% endif %}
-                  {% endfor %}
-                </div>
-                <div class="more-close">
-                  <a class="close-videos">
-                    {% include _svg/_cancelsvg.html %}
-                    <p>Cerrar</p>
-                  </a>
-                  <a class="more-videos">
-                    {% include _svg/_plusiconsvg.html %}
-                    <p>Más videos</p>
-                  </a>
-                </div>
-                <hr class="video-separation-hr">
-              </div>
-            </li>
-            <li class="year-container">
-              <p class="year">2012</p>
-              <div class="video-container">
-              </div>
-            </li>
-            <li class="year-container">
-              <p class="year">2013</p>
-              <div class="video-container">
-              </div>
-            </li>
-            <li class="year-container">
-              <p class="year">2014</p>
-              <div class="video-container">
-              </div>
-            </li>
+              </li>
+            {% endfor %}
           </ul>
         </div>
 
