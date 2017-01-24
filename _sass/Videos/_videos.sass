@@ -195,7 +195,7 @@ section.modal-window
 @media screen and (max-width: 991px)
   .categories-row
     .category-icon-container
-      margin: 0px 40px
+      margin: 0px 30px
 
 @media screen and (max-width: 767px)
   .back-row
@@ -218,16 +218,21 @@ section.modal-window
       hr
         width: 50%
 
-@media screen and (max-width: 540px)
+@media screen and (max-width: 647px)
+  .categories-row
+    .category-icon-container
+      margin: 0px 20px
+
+@media screen and (max-width: 547px)
   .wrapper
     height: 100%
     border-bottom-left-radius: 0px
     border-bottom-right-radius: 0px
   .categories-row
     svg
-      width: 50px
+      width: 45px
     .category-icon-container
-      margin: 0px 10px
+      margin: 0px 7px
     .category-icon-container:after
       border-left: 25px solid transparent
       border-right: 25px solid transparent
@@ -247,3 +252,17 @@ section.modal-window
         iframe
           width: 320px
           height: 150px
+@media screen and (max-width: 360px)
+.back-row
+  svg
+    width: 30px
+  .categories-row
+    svg
+      width: 40px
+    .category-icon-container
+      margin: 0px 7px
+    .category-icon-container:after
+      border-left: 22px solid transparent
+      border-right: 22px solid transparent
+      border-bottom: 15px solid $light-grey
+      margin: 20px 0px 0px -25px

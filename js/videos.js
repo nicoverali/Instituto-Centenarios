@@ -110,6 +110,10 @@ function categoryonstart(url){
       containers[3].className = "category-container show";
       iconContainers[3].className = "category-icon-container show";
       break;
+    case "vnot":
+      containers[4].className = "category-container show";
+      iconContainers[4].className = "category-icon-container show";
+      break;
     default:
 
   }
