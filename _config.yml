@@ -1,6 +1,6 @@
 markdown: kramdown
 title: Base Project
-author: Vera Maximiliano J.
+author: Vera Nicolás A.
 baseurl: /Instituto-Centenarios/
 description: Base Branding Project
 keywords: Base, Branding, Project
@@ -11,3 +11,6 @@ sass:
 
 collections:
   videos-cortometrajes:
+  videos-videopoemas:
+  videos-patrioticos:
+  videos-expositivos:
