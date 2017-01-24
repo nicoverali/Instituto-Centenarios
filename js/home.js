@@ -85,10 +85,15 @@ function autoridadesAppear(scroll) {
   if(document.getElementsByClassName("autoridades-unit show").length == atrds.length){/*Nothing*/}
   else {
     for(var i = 0 ; i < atrds_distance.length ; i++){
+        var timeoutOffset = 0
         if(scroll > atrds_distance[i] + 50){
+          timeoutOffset = timeoutOffset + i
+          if(timeoutOffset >= 3) {
+            timeoutOffset = timeoutOffset-3
+          }
           setTimeout(function(item){
             item.className = "autoridades-unit show";
-          } , 150 * (1+i) , atrds[i])
+          } , 150 * (1+timeoutOffset) , atrds[i])
         }
 
     }

@@ -13,7 +13,6 @@ var closeVideos
 var moreVideos
 var loadTime
 var videosAll = [];
-var allLoaded = []
 
 //GLOBAL VARIABLE FOR VIDEOPLAYER MODAL
 var playButtons
@@ -41,7 +40,6 @@ window.addEventListener("DOMContentLoaded", function(){
   videosContainers = document.getElementsByClassName("video-container")
   videoUnit = document.getElementsByClassName("video-unit")
   loadTime = new Array(videosList.length).fill(0)
-  allLoaded = new Array(videosList.length)
   var videosAllArrayNum = 0
   for (var i = 0; i < videoUnit.length; i++) {
 
@@ -142,6 +140,14 @@ function dropList(item){
       actualVideoList = videosList[i]
       firstFourVideosVar = 0
       moreVideos[i].className = "more-videos"
+      if (item.target.className == "year") {
+        videosContainers[i].className = "video-container show"
+      }
+      else {
+        videosContainers[i].className = "video-container"
+        loadTime[i] = 0
+      }
+
       if(loadTime[i] == 0){
         for (var x = 0; x < videoUnit.length; x++) {
           if(videoUnit[x].parentNode == actualVideoList && firstFourVideosVar == 4){
@@ -155,14 +161,6 @@ function dropList(item){
         if (firstFourVideosVar < 4) {
           moreVideos[i].className = "more-videos all-loaded"
         }
-      }
-
-      if (item.target.className == "year") {
-        videosContainers[i].className = "video-container show"
-      }
-      else {
-        videosContainers[i].className = "video-container"
-        loadTime[i] = 0
       }
       break;
     }
@@ -214,7 +212,6 @@ function loadMoreVideos(item){
     }
 
     if (videosAll[iterationNum].length == videoUnitShowCount) {
-      allLoaded[iterationNum] = true;
       moreVideos[iterationNum].className = "more-videos all-loaded"
     }
   }

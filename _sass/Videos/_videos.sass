@@ -39,9 +39,11 @@ section.grey-container
     display: inline-block
     text-align: center
     margin: 0px 50px
+    cursor: pointer
     &.show::after
       display: block
     &.show
+      cursor: default
       svg
         path, circle
           fill: $mainC
@@ -109,14 +111,12 @@ section.grey-container
         vertical-align: initial
         margin-right: 10px
       .video-container
-        display: none
         text-align: center
+        max-height: 0px
+        overflow: hidden
+        transition: all 1s ease-in-out
         &.show
-          display: block
-        .videos-list
-          max-height: 10000px
-          overflow: hidden
-          transition: all 1s ease-in-out
+          max-height: 7000px
         hr.video-separation-hr
           border: 0
           height: 0
