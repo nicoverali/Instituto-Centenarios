@@ -12,6 +12,8 @@ var videoUnit
 var closeVideos
 var moreVideos
 var loadTime
+var videosAll = [];
+var allLoaded = []
 
 //GLOBAL VARIABLE FOR VIDEOPLAYER MODAL
 var playButtons
@@ -39,6 +41,29 @@ window.addEventListener("DOMContentLoaded", function(){
   videosContainers = document.getElementsByClassName("video-container")
   videoUnit = document.getElementsByClassName("video-unit")
   loadTime = new Array(videosList.length).fill(0)
+  allLoaded = new Array(videosList.length)
+  var videosAllArrayNum = 0
+  for (var i = 0; i < videoUnit.length; i++) {
+
+    if(i == 0){
+      var actualParent = videoUnit[i].parentNode;
+    }
+    else if (videoUnit[i].parentNode == actualParent) {
+      continue;
+    }
+    else {
+      actualParent = videoUnit[i].parentNode
+      videosAllArrayNum++
+    }
+    videosAll[videosAllArrayNum] = [];
+    var index = 0
+    for (var x = 0; x < videoUnit.length; x++) {
+      if(videoUnit[x].parentNode == actualParent){
+      videosAll[videosAllArrayNum][index] = videoUnit[x]
+      index++
+      }
+    }
+  }
 
   for(var i = 0; i < years.length; i++) {
     years[i].addEventListener("click", dropList);
@@ -112,6 +137,7 @@ function dropList(item){
     if (item.target == years[i]) {
       actualVideoList = videosList[i]
       firstFourVideosVar = 0
+      moreVideos[i].className = "more-videos"
       if(loadTime[i] == 0){
         for (var x = 0; x < videoUnit.length; x++) {
           if(videoUnit[x].parentNode == actualVideoList && firstFourVideosVar == 4){
@@ -121,6 +147,9 @@ function dropList(item){
             videoUnit[x].className = "video-unit show"
             firstFourVideosVar++
           }
+        }
+        if (firstFourVideosVar < 4) {
+          moreVideos[i].className = "more-videos all-loaded"
         }
       }
 
@@ -155,36 +184,34 @@ function closeDropList(item){
 }
 
 function loadMoreVideos(item){
-  var actualParent
-  var actualLoadTime
   var iterationNum
   for (var i = 0; i < moreVideos.length; i++) {
     if(moreVideos[i] == item.target){
-      actualParent = videosList[i]
-      actualLoadTime = loadTime[i]
       iterationNum = i
       break;
     }
   }
+
   var thisTime
-  thisTime = actualLoadTime
-  actualLoadTime = actualLoadTime + 4
-  for (var i = 0; i <= videoUnit.length; i++) {
-    console.log(i);
-    console.log(videoUnit.length);
-    console.log(thisTime);
-    console.log(actualLoadTime);
-    console.log(loadTime);
-    if(thisTime == actualLoadTime || i == videoUnit.length){
-      loadTime[iterationNum] = actualLoadTime;
-      break;
+  thisTime = loadTime[iterationNum]
+  loadTime[iterationNum] = loadTime[iterationNum] + 4
+
+  var videoUnitShowCount = 0;
+
+  for (var i = 0; i < videosAll[iterationNum].length; i++) {
+
+    if (thisTime < loadTime[iterationNum] && videosAll[iterationNum][i].className != "video-unit show"){
+      videosAll[iterationNum][i].className = "video-unit show";
+      thisTime++;
     }
-    if((videoUnit[i].parentNode == actualParent) && (videoUnit[i].className != "video-unit show")){
-      videoUnit[i].className = "video-unit show";
-      thisTime = thisTime + 1;
+
+    if(videosAll[iterationNum][i].className == "video-unit show"){
+      videoUnitShowCount++;
     }
-    else {
-      continue;
+
+    if (videosAll[iterationNum].length == videoUnitShowCount) {
+      allLoaded[iterationNum] = true;
+      moreVideos[iterationNum].className = "more-videos all-loaded"
     }
   }
 }
@@ -193,40 +220,17 @@ function videoModal(item){
 
   var commonUrl = "https://www.dailymotion.com/embed/video/";
   var url = item.target.getAttribute("videourl");
-  video.setAttribute("src" , commonUrl + url + "?autoPlay=1");
+  video.setAttribute("mute" , false);
+  video.setAttribute("src" , commonUrl + url + "?autoPlay=1&mute=0");
   modalWindow.className = "modal-window show";
 
   document.getElementsByTagName('html')[0].className = "not-scroll";
-/*  scrollY = window.scrollY;
-  scrollX = window.scrollX;
-  document.body.className = "videos block"
-  window.addEventListener("scroll", notScroll)*/
-  document.getElementsByTagName("html")[0].addEventListener('touchmove', notScrollMobile);
-  window.addEventListener("touchstart", function(event){
-               if(event.target.tagName=="HTML" || event.target.tagName=="BODY"){
-                       event.preventDefault();
-               }
-  } ,false);
-
 }
 
 function closeModalFunction(){
   var commonUrl = "https://www.dailymotion.com/embed";
-  video.setAttribute("src" , "");
+  video.setAttribute("src" , commonUrl + "?mute=1");
   modalWindow.className = "modal-window";
-  video.setAttribute("src" , commonUrl);
+
   document.getElementsByTagName('html')[0].className = "";
-  /*window.removeEventListener("scroll", notScroll);*/
-  document.getElementsByTagName("html")[0].removeEventListener('touchmove', notScrollMobile);
-}
-
-function notScroll(){
-  scrollY = window.scrollY;
-  scrollX = window.scrollX;
-  window.scrollTo(scrollX,scrollY)
-}
-
-function notScrollMobile(e){
-  e.preventDefault();
-  e.stopPropagation();
 }

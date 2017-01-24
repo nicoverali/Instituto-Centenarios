@@ -49,8 +49,8 @@ permalink: /videos/
     </div>
     <div class="row videos-row">
       <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12 grey-container">
+        <!--SECTION : Videos-CORTOMETRAJES -->
         <div class="category-container">
-          <!--SECTION : Videos-CORTOMETRAJES -->
           <h2 class="category-title">Cortometrajes</h2>
           <hr>
           <ul>
@@ -88,7 +88,45 @@ permalink: /videos/
             {% endfor %}
           </ul>
         </div>
-
+        <!--SECTION : Videos-VIDEOPOEMAS -->
+        <div class="category-container">
+          <h2 class="category-title">Videopoemas</h2>
+          <hr>
+          <ul>
+            {% for video in site.videos-cortometrajes %}
+              {% if forloop.first == true %}
+                {% assign actualYear = video.fecha %}
+              {% elsif video.fecha == actualYear %}
+                {% continue %}
+              {% else %}
+                {% assign actualYear = video.fecha %}
+              {% endif %}
+              <li class="year-container">
+                <p class="year">{{actualYear}}</p>
+                <div class="video-container">
+                  <div class="videos-list">
+                    {% for videounit in site.videos-cortometrajes %}
+                      {% if videounit.fecha == actualYear %}
+                        {{videounit}}
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  <div class="more-close">
+                    <a class="close-videos">
+                      {% include _svg/_cancelsvg.html %}
+                      <p>Cerrar</p>
+                    </a>
+                    <a class="more-videos">
+                      {% include _svg/_plusiconsvg.html %}
+                      <p>Más videos</p>
+                    </a>
+                  </div>
+                  <hr class="video-separation-hr">
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
 

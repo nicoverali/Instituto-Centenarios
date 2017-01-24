@@ -126,9 +126,17 @@ section.grey-container
         .more-close
           a
             display: inline-block
+            cursor: pointer
             &.more-videos
               svg
                 width: 28px
+              &.all-loaded
+                cursor: not-allowed
+                svg
+                  path, circle
+                    fill: #333
+                p
+                  color: #333
             svg
               width: 25px
               height: auto
@@ -231,3 +239,11 @@ section.modal-window
         iframe
           width: 320px
           height: 180px
+
+@media screen and (max-width: 540px),(max-height: 360px)
+  section.modal-window
+    .modal-container
+      .modal-video-container
+        iframe
+          width: 320px
+          height: 150px
