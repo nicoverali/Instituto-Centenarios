@@ -1,0 +1,28 @@
+.calendar
+  text-align: center
+  position: relative
+  display: inline-block
+  svg
+    width: 200px
+    height: 200px
+    display: inline-block
+    rect, path
+      &.svg-calendar-background
+        fill: $calendar-dark
+      &.svg-calendar-lighten
+        fill: lighten($calendar-dark, 10)
+    &:hover
+      rect, path
+        &.svg-calendar-background
+          fill: darken($mainC , 10)
+        &.svg-calendar-lighten
+          fill: lighten(darken($mainC , 10), 5)
+  p
+    color: white
+    font-family: "Quicksand"
+    font-size: 60px
+    position: absolute
+    margin: 0px
+    top: 50%
+    left: 50%
+    transform: translateX(-50%) translateY(-50%)
