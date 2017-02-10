@@ -3,7 +3,7 @@ layout: default
 title: Diario escolar | Instituto Centenarios
 body_class: daily
 show_home: true
-js:
+js: daily
 nav_array:
   - name: Videos escolares
     url: videos-menu
@@ -11,9 +11,53 @@ nav_array:
     url: #
 permalink: /daily/
 ---
-<div class="calendar">
-  {% include _svg/_calendarsvg.html %}
-  <p>2017</p>
-</div>
 
-<img src="{{site.baseurl}}/assets/img/daily-page/calendar-png.png" alt="">
+<!-- Section: BANNER -->
+<section class="banner">
+  <div class="container">
+    <div class="banner-title">
+      <h1>Diario escolar</h1>
+      <p>Instituto Centenarios</p>
+    </div>
+    <div class="banner-years-container">
+      <div class="arrow-svg-container">
+        {% include _svg/_left-arrowsvg.html %}
+      </div>
+
+      <div class="years-limit-container">
+        <a href="" class="daily-year not-visible">1998</a>
+        <a href="" class="daily-year not-visible">1998</a>
+        <a href="" class="daily-year">2006</a>
+        <a href="" class="daily-year">2007</a>
+        <a href="" class="daily-year">2008</a>
+        <a href="" class="daily-year">2009</a>
+        <a href="" class="daily-year">2010</a>
+        <a href="" class="daily-year show">2011</a>
+        <a href="" class="daily-year show">2012</a>
+        <a href="" class="daily-year show selected-year">2013</a>
+        <a href="" class="daily-year show">2014</a>
+        <a href="" class="daily-year show">2015</a>
+        <a href="" class="daily-year not-visible">1998</a>
+        <a href="" class="daily-year not-visible">1998</a>
+      </div>
+
+      <div class="arrow-svg-container">
+        {% include _svg/_right-arrowsvg.html %}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Section: POSTS -->
+<section class="posts">
+  <div class="container box-shadow-container">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 col-sm-10">
+        <ul class="posts-list">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
