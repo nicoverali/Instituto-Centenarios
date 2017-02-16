@@ -1,4 +1,25 @@
 ---
-layout: daily-unit
+layout: default
 permalink: /dailytest/
 ---
+<div class="posts">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-lg-offset-1 col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1" >
+
+          {% for post in site.posts %}
+            <figure class="daily-unit box-shadow-container">
+              <div class="daily-image" style="background-image: url({{ site.baseurl }}/assets/img/daily-page/posts-images/{{ post.date | date: '%Y' }}/{{ post.coverimage }}.jpg)">
+              </div>
+              <article class="daily-article">
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.summary }}</p>
+                <a class="button" href="{{ post.url }}">Leer</a>
+              </article>
+            </figure>
+          {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>

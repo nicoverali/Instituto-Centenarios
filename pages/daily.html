@@ -53,10 +53,34 @@ permalink: /daily/
 <section class="posts">
   <div class="container box-shadow-container">
     <div class="row">
-      <div class="col-lg-10 col-md-10 col-sm-10">
-        <ul class="posts-list">
-          
-        </ul>
+      <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+        {% for post in site.posts %}
+        {% assign postyear = post.date | date: '%Y' %}
+          {% if forloop.first == true %}
+            {% assign actualyear = postyear %}
+          {% elsif postyear == actualyear %}
+            {% continue %}
+          {% else %}
+            {% assign actualyear = postyear %}
+          {% endif %}
+          <div class="post-list {{ actualyear }}">
+            {% for postunit in site.posts reversed %}
+            {% assign postunityear = postunit.date | date: '%Y' %}
+              {% if postunityear == actualyear %}
+              <figure class="daily-unit box-shadow-container">
+                <div class="daily-image" style="background-image: url({{ site.baseurl }}/assets/img/daily-page/posts-images/{{ postunit.date | date: '%Y' }}/{{ postunit.coverimage }}.jpg)">
+                </div>
+                <article class="daily-article">
+                  <p class="fecha">{{ postunit.date | date: "%B %-d, %Y" }}</p>
+                  <h2>{{ postunit.title }}</h2>
+                  <p>{{ postunit.summary }}</p>
+                  <a class="button" href="{{ postunit.url }}">Leer</a>
+                </article>
+              </figure>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>

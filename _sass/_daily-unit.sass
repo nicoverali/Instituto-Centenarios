@@ -8,12 +8,17 @@
   position: relative
   .daily-article
     display: inline-block
-    max-width: 70%
+    width: 70%
     min-height: 100%
     background-color: white
+    p.fecha
+      color: $quote-grey
+      font-size: 11px
+      font-weight: 300
+      margin: 10px 0px 0px
     h2
       margin: 0px
-      padding: 25px 0px 10px
+      padding: 10px 0px 10px
       position: relative
       border-bottom: 1px solid $mainC
       font-size: 26px
@@ -31,13 +36,11 @@
     float: right
     position: relative
     height: 100%
-    //max-width: 30%
     overflow: hidden
     width: 30%
     background-repeat: no-repeat
     background-size: cover
     background-position: bottom
-
     &:after
       content: ''
       position: absolute
@@ -45,21 +48,6 @@
       left: 0
       border-bottom: 250px solid white
       border-right: 255px solid transparent
-    div.hidden-triangle
-      position: absolute
-      display: inline-block
-      right: 0
-      width: 100%
-      height: 100%
-      border-style: solid
-      border-width: 300px 0 0 255px
-      border-color: transparent transparent transparent white
-      z-index: 1
-
-    img.post-image
-      height: 100%
-      position: relative
-
 
 @media screen and (max-width: 1200px)
   .daily-unit
@@ -72,3 +60,24 @@
         right: 100px
       div.hidden-triangle
         border-width: 300px 0 0 165px
+
+@media screen and (max-width: 991px)
+  .daily-unit
+    height: auto
+    padding: 0px 0px 25px
+    text-align: center
+    .daily-image
+      float: none
+      height: 150px
+      width: 100%
+      background-position: center
+      &::after
+        border-bottom: 0
+        border-right: 0
+    .daily-article
+      max-width: 90%
+      text-align: center
+      a
+        display: block
+        position: static
+        margin: auto

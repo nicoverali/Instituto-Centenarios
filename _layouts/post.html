@@ -1,0 +1,43 @@
+---
+layout: default
+title: Diario escolar | Instituto Centenarios
+body_class: post
+show_home: true
+js: lightbox.min
+nav_array:
+  - name: Videos escolar
+    url: videos
+  - name: Contactanos
+    url: #
+---
+<section class="post">
+  <div class="container white-container box-shadow-container">
+    <div class="row back-row">
+      <div class="col-lg-12">
+        <a href="{{site.baseurl}}/daily">
+          {% include _svg/_back-arrowsvg.html %}
+          <h3>Diario escolar</h3>
+        </a>
+      </div>
+    </div>
+    <div class="row article-row">
+      <div class="col-lg-12">
+        <p class="fecha">{{ page.date | date: "%B %-d, %Y" }}</p>
+        <h1>{{ page.title }}</h1>
+        <article class="post-article">
+          <p>{{content}}</p>
+        </article>
+        <hr>
+        <div class="post-images">
+          {% for image in page.images %}
+          <div class="black-filter">
+            <a href="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" data-lightbox="postsimg">
+              <img class="post-article-image" src="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" alt="{{ post.alt }}">
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
