@@ -9,72 +9,72 @@ window.addEventListener('DOMContentLoaded', function() {
   leftArrow = document.getElementsByClassName("arrow-svg-container")[0];
   rightArrow = document.getElementsByClassName("arrow-svg-container")[1];
   console.log(leftArrow);
-  years = document.getElementsByClassName("daily-year show");
+  years = document.getElementsByClassName("daily-year");
 
   //Show a post year at start
   startPostList();
-    //Function when clicking left arrow
-      leftArrow.addEventListener("click", function(item){
-        if (years[0].previousElementSibling.className == "daily-year not-visible") {
-          years[0].previousElementSibling.className = "daily-year not-visible show"
-        }
-        else {
-          years[0].previousElementSibling.className = "daily-year show";
-        }
-        if (years[(years.length - 1)].className == "daily-year not-visible show") {
-          years[(years.length - 1)].className = "daily-year not-visible"
-        }
-        else {
-          years[(years.length - 1)].className = "daily-year"
-        }
 
-        for (var i = 0; i < years.length; i++) {
-          if (i == 2) {
-            years[i].className = "daily-year show selected-year";
-          }
-          else if (years[i].className == "daily-year not-visible show") {
-            //nothing
-          }
-          else{
-            years[i].className = "daily-year show";
-          }
-        };
+  //Function when clicking left arrow
+  leftArrow.addEventListener("click", function(){
+    var doIt = true
+    //Run function to select previous year
+    selectYear(0, doIt);
+  });
 
-        //Run function to show the correct Post List
-        showPostList();
-      });
-
-      //Function when clicking right arrow
-        rightArrow.addEventListener("click", function(item){
-          if (years[(years.length - 1)].nextElementSibling.className == "daily-year not-visible") {
-            years[(years.length - 1)].nextElementSibling.className = "daily-year not-visible show"
-          }
-          else {
-            years[(years.length - 1)].nextElementSibling.className = "daily-year show";
-          }
-          if (years[0].className == "daily-year not-visible show") {
-            years[0].className = "daily-year not-visible"
-          }
-          else {
-            years[0].className = "daily-year"
-          }
-
-          for (var i = 0; i < years.length; i++) {
-            if (i == 2) {
-              years[i].className = "daily-year show selected-year";
-            }
-            else if (years[i].className == "daily-year not-visible show") {
-              //nothing
-            }
-            else{
-              years[i].className = "daily-year show";
-            }
-          };
-
-          //Run function to show the correct Post List
-          showPostList();
-        });
+  //Function when clicking right arrow
+  rightArrow.addEventListener("click", function(){
+    var doIt = true
+    //Run function to select previous year
+    selectYear(1, doIt);
+  });
 })
+
+function selectYear(direction, doIt){
+  var actualYear = document.getElementsByClassName("selected-year")[0];
+  if (direction == 0) {
+    var newYear = actualYear.previousElementSibling;
+  }
+  else {
+    var newYear = actualYear.nextElementSibling;
+  }
+  if (newYear.classList.contains("not-visible")) {
+    doIt = false;
+  }
+
+  if (doIt) {
+    actualYear.classList.remove("selected-year");
+    newYear.classList.add("selected-year");
+    //Run function to set sibiling of the selected year
+    sibilingYears();
+  }
+
+}
+
+function sibilingYears(){
+  var selectedYear = document.getElementsByClassName("selected-year")[0],
+      previous1 = selectedYear.previousElementSibling,
+      previous2 = selectedYear.previousElementSibling.previousElementSibling,
+      next1 = selectedYear.nextElementSibling,
+      next2 = selectedYear.nextElementSibling.nextElementSibling;
+
+  // Remove all "show" or "show-on-large" classes
+  for (var i = 0; i < years.length; i++) {
+    if (years[i] != selectedYear) {
+      years[i].classList.remove("show", "show-on-large")
+    }
+  }
+
+  changeClasses(previous1, previous2);
+  changeClasses(next1, next2)
+
+  // Add class to sibilings
+  function changeClasses(firstSibling,secondSibiling){
+    firstSibling.classList.add("show");
+    secondSibiling.classList.add("show-on-large");
+  }
+  //Run function to show the correct Post List
+  showPostList();
+}
 
 function showPostList(){
   var selectedYear = document.getElementsByClassName("selected-year")[0];

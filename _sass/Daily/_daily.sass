@@ -58,6 +58,8 @@ section.banner-section
           display: none
           &.show
             display: inline
+          &.show-on-large
+            display: inline
           &.not-visible
             visibility: hidden
           &.selected-year
@@ -71,3 +73,25 @@ section.posts
       display: block
     figure
       margin: 30px 10px
+
+@media screen and (max-width: 992px)
+  section.banner-section
+    .banner
+      .banner-years-container
+        .years-limit-container
+          a.daily-year
+            &.show-on-large
+              display: none
+@media screen and (max-width: 560px)
+  section.banner-section
+    .banner
+      .banner-years-container
+        .arrow-svg-container
+          padding: 5px
+        .years-limit-container
+          margin: 5px
+          a.daily-year
+            font-size: 18px
+            margin: 5px
+            &.selected-year
+              font-size: 23px
