@@ -1,68 +1,69 @@
-.banner
-  background-color: $daily-banner
-  height: 250px
-  text-align: center
-  position: relative
-  .banner-title
-    h1
-      color: white
-      margin: 30px 0px 10px
-      font-family: "Raleway"
-      font-size: 40px
-      font-weight: 300
-      letter-spacing: 2px
-    p
-      color: $quote-grey
-      margin: 0px
-      font-weight: 300
-  .banner-years-container
-    position: absolute
-    margin: 0px
-    bottom: 50px
-    left: 50%
-    transform: translateX(-50%)
-
-    -webkit-touch-callout: none
-    -webkit-user-select: none
-    -khtml-user-select: none
-    -moz-user-select: none
-    -ms-user-select: none
-    -o-user-select: none
-    user-select: none
-
-    .arrow-svg-container
-      display: inline-block
-      padding: 20px
-      cursor: pointer
-    svg
-      width: 20px
-      height: 20px
-      vertical-align: middle
-      margin: 2px 0px 0px
-      cursor: pointer
-      path,rect
-        fill: white
-    .years-limit-container
-      display: inline-block
-      position: relative
-      margin: 0px 20px
-      a.daily-year
-        color: $quote-grey
-        margin: 0px 15px
-        font-family: "Open Sans"
-        font-size: 22px
+section.banner-section
+  background-color: $light-grey
+  .banner
+    background-color: $daily-banner
+    height: 250px
+    text-align: center
+    position: relative
+    .banner-title
+      h1
+        color: white
+        margin: 30px 0px 10px
+        font-family: "Raleway"
+        font-size: 40px
         font-weight: 300
-        letter-spacing: 4px
+        letter-spacing: 2px
+      p
+        color: $quote-grey
+        margin: 0px
+        font-weight: 300
+    .banner-years-container
+      position: relative
+      margin: 50px 0px 0px
+      left: 50%
+      transform: translateX(-50%)
+
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      -o-user-select: none
+      user-select: none
+
+      .arrow-svg-container
+        display: inline-block
+        padding: 20px
+        cursor: pointer
+      svg
+        width: 20px
+        height: 20px
         vertical-align: middle
-        display: none
-        &.show
-          display: inline
-        &.not-visible
-          visibility: hidden
-        &.selected-year
-          font-size: 28px
-          color: white
+        margin: 2px 0px 0px
+        cursor: pointer
+        path,rect
+          fill: white
+      .years-limit-container
+        display: inline-block
+        position: relative
+        margin: 0px 20px
+        a.daily-year
+          color: $quote-grey
+          margin: 0px 15px
+          font-family: "Open Sans"
+          font-size: 22px
+          font-weight: 300
+          letter-spacing: 4px
           vertical-align: middle
+          display: none
+          &.show
+            display: inline
+          &.not-visible
+            visibility: hidden
+          &.selected-year
+            font-size: 28px
+            color: white
+            vertical-align: middle
 section.posts
   .post-list
     display: none
@@ -70,4 +71,3 @@ section.posts
       display: block
     figure
       margin: 30px 10px
-      

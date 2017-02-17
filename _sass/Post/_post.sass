@@ -2,9 +2,35 @@ section.post
   background-color: $light-grey
   div.container
     padding: 15px
+    position: relative
+    .hide-rectangle
+      position: absolute
+      top: 0
+      left: 0
+      width: 10px
+      height: 100%
+      background-color: white
+      z-index: 5
+      pointer-events: none
+    .absolute-container
+      position: absolute
+      left: -40px
+      top: 0
+      display: inline-block
+      .back-button
+        position: fixed
+        top: 30%
+        margin-left: 7px
+        transition: margin 300ms ease-in-out
+        &:hover
+          margin-left: 0px
+        svg
+          width: 80px
+          cursor: pointer
     .back-row
       text-align: left
       padding-left: 0px
+      display: none
       h3
         display: inline-block
         margin: 0px 0px 0px 10px
@@ -73,6 +99,10 @@ section.post
 @media screen and (max-width: 992px)
   section.post
     div.container
+      .absolute-container
+        display: none
+      .back-row
+        display: block
       .article-row
         h1
           max-width: 100%
