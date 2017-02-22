@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: dona008
+coverimage: dona
 title: Donación de la Cooperativa Obrera
 summary: La Cooperativa Obrera Ltda. de Consumo y Vivienda realizo una donación de computadoras (monitores, teclados, CPU.) entre otros artefactos más.
 category: daily

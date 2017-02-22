@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: ince003
+coverimage: ince
 title: Simulacro de incendio
 summary: La evacuación del edificio se concretó en menos de cuatro minutos. Fue como parte del Plan de Prevención de Emergencia y Evacuación. La experiencia fue calificada como muy valiosa por los Directivos de la Escuela Primaria y Secundaria.
 category: daily

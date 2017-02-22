@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: robo001
+coverimage: robo
 title: Concurso U.T.N.
 summary: Robots construidos por alumnos
 category: daily

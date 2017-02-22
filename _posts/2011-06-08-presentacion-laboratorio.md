@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: labp007
+coverimage: labp
 title: Presentación de los laboratorios
 summary: El 8 de junio el Instituto presentó las nuevas instalaciones.
 category: daily

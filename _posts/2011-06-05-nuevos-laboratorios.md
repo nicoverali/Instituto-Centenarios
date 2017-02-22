@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: lab006
+coverimage: lab
 title: Nuevo laboratorio tecnológico
 summary: La dirección del Instituto invita a todos los DOCENTES a participar de la Puesta en Marcha del LABORATORIO DE TECNOLOGÍA que se llevará a cabo el día 8 de junio.
 category: daily

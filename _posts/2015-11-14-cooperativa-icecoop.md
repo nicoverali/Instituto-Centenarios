@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: coop001
+coverimage: coop
 title: Cooperativa ICECOOP
 summary: Con las chicas de 5.° “Administración” Milagros Sarries y Rocío Godoy hablamos sobre la Cooperativa Escolar.
 category: daily

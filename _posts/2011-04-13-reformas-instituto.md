@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: rem002
+coverimage: rem
 title: Nuevas reformas para el “Centenarios”
 summary: Al comienzo del año lectivo, en el Instituto “Centenarios” se llevaron a cabo una serie de remodelaciones.
 category: daily

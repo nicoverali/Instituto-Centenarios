@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: lec001
+coverimage: lec
 title: Octava Maratón de Lectura
 summary: Se realizo la octava maratón de lectura en el "Centenarios"
 category: daily

@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: des004
+coverimage: des
 title: Desfile cívico militar
 summary: La ciudad de Punta Alta cumple este miércoles un nuevo año de vida y lo festejó con una nutrida agenda de actos, entre los que sobresalió el desfile cívico y militar que comenzó a las 13.30 y que contó con la participación de aproximadamente 2.500 personas.
 category: daily

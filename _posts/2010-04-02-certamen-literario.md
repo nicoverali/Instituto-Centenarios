@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: malv002
+coverimage: malv
 title: Certamen Literario  “Malvinas, parte de mi patria”
 summary: Con motivo de los actos conmemorativos por el vigésimo aniversario de la Guerra de Malvinas y de los festejos por el Bicentenario de la Patria, los alumnos del Instituto “Centenarios” participaron del Certamen Literario organizado por el Centro de Veteranos de Guerra y Familiares de Caídos en Malvinas de Punta Alta
 category: daily

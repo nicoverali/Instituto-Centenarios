@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: bien002
+coverimage: bien
 title: ¡Bienvenidos!
 summary: El INSTITUTO “CENTENARIOS” está recibiendo visitas en el curso de esta semana del 12 al 15 de julio de delegaciones de alumnos de tercer año de la Escuela Secundaria.
 category: daily
@@ -31,4 +31,4 @@ images:
   - bien023
 ---
 
-El INSTITUTO “CENTENARIOS” está recibiendo visitas en el curso de esta semana del 12 al 15 de julio de delegaciones de alumnos de tercer año de la Escuela Secundaria. 
+El INSTITUTO “CENTENARIOS” está recibiendo visitas en el curso de esta semana del 12 al 15 de julio de delegaciones de alumnos de tercer año de la Escuela Secundaria.

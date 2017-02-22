@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: cent004
+coverimage: cent
 title: Elecciones del Centro de Estudiantes
 summary: "Este miércoles 6 de abril a partir de las 8 a.m. se presentarán dos listas: la naranja y la azul."
 category: daily
@@ -33,4 +33,4 @@ Este miércoles 6 de abril a partir de las 8 a.m. se presentarán dos listas: la
 * Primer Vocal: Sr. Arturo ESCALANTE (5º “Electromecánica”).
 * Segundo Vocal: Sr. Santiago BARBOZA (5º “Electrónica”).
 
-Milena Doñate de la lista naranja pide **responsabilidad a la hora de votar**. Thomás Galli de la lista azul nos recuerda que **el alumno deberá concurrir a la mesa de votación con el Pase de zona reservada o el cuaderno de comunicaciones con la fotocopia del documento** presente en el mismo. 
+Milena Doñate de la lista naranja pide **responsabilidad a la hora de votar**. Thomás Galli de la lista azul nos recuerda que **el alumno deberá concurrir a la mesa de votación con el Pase de zona reservada o el cuaderno de comunicaciones con la fotocopia del documento** presente en el mismo.

@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: vial012
+coverimage: vial
 title: Seguridad vial para todos
 summary: El viernes 3 de junio se realizó en el patio interior del “Centenarios” una conferencia sobre Educación Vial organizada por el Rotary Club.
 category: daily

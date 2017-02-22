@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: corto001
+coverimage: corto
 title: "Primer premio: Cortometraje en la era digital: prácticas del lenguaje 2.0"
 summary: Al no contar con un bibliotecario, los alumnos de la Escuela Centenario de Punta Alta, Buenos Aires, participaron en el relevamiento, catalogación y sistematización en un documento Excel sobre el contenido de la biblioteca.
 category: daily

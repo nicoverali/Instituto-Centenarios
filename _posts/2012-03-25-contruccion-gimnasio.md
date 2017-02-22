@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: con016
+coverimage: cons
 title: Construcción de gimnasio
 summary: "El Instituto 'Centenarios' está construyendo un nuevo espacio para Educación Física: el GIMNASIO."
 category: daily

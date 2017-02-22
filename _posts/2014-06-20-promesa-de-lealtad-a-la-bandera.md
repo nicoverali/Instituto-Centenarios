@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: jura002
+coverimage: jura
 title: Promesa de lealtad a la bandera
 summary: Celebramos el “Paso a la Inmortalidad del General Manuel Belgrano”
 category: daily

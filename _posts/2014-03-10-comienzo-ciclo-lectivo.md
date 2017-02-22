@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: bien001
+coverimage: bien
 title: Acto de inicio de clases
 summary: ¡BIENVENIDOS!
 category: daily

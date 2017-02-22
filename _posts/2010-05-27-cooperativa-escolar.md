@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: coop001
+coverimage: coop
 title: La Cooperativa Escolar
 summary: El jueves 27 de mayo la profesora Leonor Ocampo, licenciada en Sociología en la U.B.A y especialista en “Sistemas Cooperativos”, dio una charla-taller en nuestro Instituto “Centenarios”
 category: daily

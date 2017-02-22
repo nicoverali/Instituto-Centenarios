@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: est001
+coverimage: est
 title: Fiesta del Estudiante
 summary: Celebramos la fiesta del estudiante en el "Centenarios"
 category: daily

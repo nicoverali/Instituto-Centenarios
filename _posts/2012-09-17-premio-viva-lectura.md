@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: viva003
+coverimage: viva
 title: Premio VIVA LECTURA
 summary: En el marco de la 38º Feria Internacional del Libro en Buenos Aires se llevó a cabo la entrega de premios del concurso VIVALECTURA 2012 cuyo objetivo es estimular, fomentar y rendir homenaje a las experiencias más destacadas en materia de promoción de la lectura.
 category: daily

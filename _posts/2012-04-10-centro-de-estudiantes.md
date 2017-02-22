@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: cen001
+coverimage: cen
 title: Centro de Estudiantes 2012
 summary: VOTACIÓN
 category: daily

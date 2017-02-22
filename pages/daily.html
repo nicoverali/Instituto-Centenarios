@@ -29,7 +29,19 @@ permalink: /daily/
           <div class="years-limit-container">
             <a href="" class="daily-year not-visible">1998</a>
             <a href="" class="daily-year not-visible">1998</a>
-            <a href="" class="daily-year">2006</a>
+            {% for post in site.posts %}
+            {% assign postyear = post.date | date: '%Y' %}
+              {% if forloop.first == true %}
+                {% assign actualyear = postyear %}
+                <a href="" class="daily-year">{{actualyear}}</a>
+              {% elsif postyear == actualyear %}
+                {% continue %}
+              {% else %}
+                {% assign actualyear = postyear %}
+                <a href="" class="daily-year">{{actualyear}}</a>
+              {% endif %}
+            {% endfor %}
+            <a href="" class="daily-year">{{actualyear}}</a>
             <a href="" class="daily-year">2007</a>
             <a href="" class="daily-year">2008</a>
             <a href="" class="daily-year">2009</a>
@@ -71,7 +83,7 @@ permalink: /daily/
             {% assign postunityear = postunit.date | date: '%Y' %}
               {% if postunityear == actualyear %}
               <figure class="daily-unit box-shadow-container">
-                <div class="daily-image" style="background-image: url({{ site.baseurl }}/assets/img/daily-page/posts-images/{{ postunit.date | date: '%Y' }}/{{ postunit.coverimage }}.jpg)">
+                <div class="daily-image" style="background-image: url({{ site.baseurl }}/assets/img/daily-page/posts-images/{{ postunit.date | date: '%Y' }}/cover-images/{{ postunit.coverimage }}.jpg)">
                 </div>
                 <article class="daily-article">
                   <p class="fecha">{{ postunit.date | date: "%B %-d, %Y" }}</p>

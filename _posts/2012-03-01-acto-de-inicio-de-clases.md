@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: ini003
+coverimage: ini
 title: Acto de inicio de clases
 summary: CICLO LECTIVO 2012
 category: daily

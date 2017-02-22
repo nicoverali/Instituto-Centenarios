@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: sim004
+coverimage: sim
 title: Simulacro de incendio
 summary: Apenas un minuto quince segundos fueron suficientes para que los alumnos y docentes se pusieran a resguardo en lo que fue un simulacro de incendio en el Instituto “Centenarios”
 category: daily

@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: prim002
+coverimage: prim
 title: Primer año escuela secundaria
 summary: ¡Bienvenido primer año!
 category: daily

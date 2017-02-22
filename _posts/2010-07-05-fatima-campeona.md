@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: fat001
+coverimage: fat
 title: Fátima Aguilera, campeona bonaerense de triatlón
 summary: El señor MARIO FALCÓN, entrenador de competencias extremas, en un intento de lograr contagiar convicciones y espíritu de sacrificio en pos del crecimiento, vida sana y continuo progreso, le pidió a la Sra. Directora del Instituto “Centenarios”, profesora María del C. FERRI, dar a conocer este mensaje ...
 category: daily

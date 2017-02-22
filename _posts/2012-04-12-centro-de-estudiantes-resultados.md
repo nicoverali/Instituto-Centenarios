@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: res002
+coverimage: res
 title: Centro de Estudiantes (Resultado)
 summary: Resultados de las elecciones
 category: daily

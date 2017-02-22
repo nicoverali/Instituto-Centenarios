@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: lec005
+coverimage: lec
 title: Maraton de lectura
 summary: La Escuela Primaria celebró la Maratón de Lectura con sus alumnos, padres y Directivos.La Maratón Nacional de Lectura de Fundación Leer es un evento dedicado a celebrar y compartir la lectura.
 category: daily

@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: mura009
+coverimage: mura
 title: Mural contra la discriminación
 summary: La Institución C.I.N.D.I. de Punta Alta (Centro Integral Del Discapacitado) invitó al Instituto “Centenarios” para ayudar a realizar un mural en contra de la discriminación.
 category: daily

@@ -4,12 +4,13 @@
     background-color: white
 .daily-unit
   height: 250px
-  padding-left: 15px
+  padding: 0px 0px 0px 20px
   position: relative
   .daily-article
     display: inline-block
     width: 70%
     min-height: 100%
+    padding: 10px 0px
     background-color: white
     p.fecha
       color: $quote-grey
@@ -18,7 +19,7 @@
       margin: 10px 0px 0px
     h2
       margin: 0px
-      padding: 10px 0px 10px
+      padding: 10px 0px 5px
       position: relative
       border-bottom: 1px solid $mainC
       font-size: 26px
@@ -68,10 +69,10 @@
     text-align: center
     .daily-image
       float: none
-      height: 150px
+      height: 200px
       width: 100%
       background-position: top
-      background-position: 0px -15px
+      background-position: 0px -25px
       &::after
         border-bottom: 0
         border-right: 0
@@ -82,3 +83,9 @@
         display: block
         position: static
         margin: auto
+
+@media screen and (max-width: 530px)
+  .daily-unit
+    .daily-image
+      background-position: 0px -15px
+      height: 150px

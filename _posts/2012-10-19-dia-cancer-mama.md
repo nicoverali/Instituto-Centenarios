@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: mama003
+coverimage: mama
 title: Octubre se viste de rosa
 summary: DÍA CONTRA EL CÁNCER DE MAMA
 category: daily

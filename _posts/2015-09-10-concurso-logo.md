@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: logo001
+coverimage: logo
 title: Concurso LOGO!
 summary: Llevado adelante por la Fundación Siemens junto a la división Process Industries and Drives / Digital Factory de Siemens S.A., el concurso LOGO! premia aplicaciones que permitan solucionar necesidades o problemáticas de la industria, la vivienda y la comunidad en su conjunto.
 category: daily

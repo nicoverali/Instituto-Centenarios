@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: elec001
+coverimage: elec
 title: Elecciones en el "Centenarios"
 summary: El día miércoles 16 de junio se realizó en el Intituto “Centenarios” una votación con el fin de elegir a los integrantes del CENTRO DE ESTUDIANTES.
 category: daily

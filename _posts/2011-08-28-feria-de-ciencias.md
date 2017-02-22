@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: feria001
+coverimage: feria
 title: XXVIII Ferias De Ciencias Y Tecnologías
 summary: Los alumnos ERIC OVIEDO y VIOLETA MIHOEVICH participaron en Ferias de Ciencias y Tecnologías. Obtuvieron el primer puesto en Ciencias Exactas.
 category: daily

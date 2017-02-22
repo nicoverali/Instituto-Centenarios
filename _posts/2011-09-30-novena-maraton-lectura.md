@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: lec002
+coverimage: lec
 title: Novena maraton de lectura
 summary: Con la organización de la Fundación Leer se concretó hoy en el Instituto “Centenarios” la novena edición de la Maratón Nacional de Lectura, destinada a la promoción de los libros y de la práctica lectora.
 category: daily

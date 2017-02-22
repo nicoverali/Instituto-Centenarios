@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: ajus003
+coverimage: ajus
 title: Sección ajustaje
 summary: La educación tecnológica enfocada en enseñar trabajando, con criterios de calidad inciden directamente en el desarrollo individual y social.
 category: daily

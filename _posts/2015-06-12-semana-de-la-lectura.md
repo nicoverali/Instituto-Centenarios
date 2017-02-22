@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: seml004
+coverimage: seml
 title: Semana de la lectura
 summary: Los alumnos de 3° año disfrutaron del cuento  de Ema Wolf “El regalo del señor Maquiaveli”, narrado por alumnos de la EST de la institución.
 category: daily

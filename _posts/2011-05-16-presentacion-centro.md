@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: pres003
+coverimage: pres
 title: Presentación del Centro de Estudiantes
 summary: Milena DOÑATE, presidente del Centro de Estudiantes, y Nicolás DÍAZ, vocal, están preparando una presentación en Power Point para informar a los chicos sobre los avances y concreciones de de Proyectos presentados
 category: daily

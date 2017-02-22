@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: prog011
+coverimage: prog
 title: Progreso en la contrucción
 summary: La contrucción del gimnsasio avanza!
 category: daily

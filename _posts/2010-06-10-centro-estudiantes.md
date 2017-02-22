@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: cen001
+coverimage: cen
 title: Centro de Estudiantes
 summary: Con la convicción de mejorar la convivencia institucional y social surgió la necesidad de crear un Centro de Estudiantes. Es un organismo que sirve como nexo entre Directivos y alumnos.
 category: daily

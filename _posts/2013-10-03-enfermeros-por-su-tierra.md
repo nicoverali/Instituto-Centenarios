@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: enf001
+coverimage: enf
 title: Enfermeros por su tierra
 summary: El proyecto se denomina “Enfermeros por su tierra”. Consiste en la asistencia médica en los lugares donde la población no tiene la debida atención sanitaria pública, no cuenta con obra social y carece de todo tipo de necesidades básicas.
 category: daily

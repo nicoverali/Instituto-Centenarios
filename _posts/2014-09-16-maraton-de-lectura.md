@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: mar010
+coverimage: mar
 title: Maraton de lectura
 summary: Masiva concurrencia de Padres. Alumnos gozaron con la lectura.
 category: daily

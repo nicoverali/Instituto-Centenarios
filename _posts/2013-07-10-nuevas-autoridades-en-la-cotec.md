@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: cotec008
+coverimage: cotec
 title: Nuevas autoridades en la COTEC
 summary: Cooperativa de Trabajo y Enseñanza Centenarios “COTEC” Limitada (Período 2013-2016)
 category: daily

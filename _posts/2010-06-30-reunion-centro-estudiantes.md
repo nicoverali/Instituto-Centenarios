@@ -1,6 +1,6 @@
 ---
 layout: post
-coverimage: reun001
+coverimage: reun
 title: Reunión del Centro de Estudiantes
 summary: Hoy 30 de junio a las 10.50  los alumnos que conforman la comisión del CENTRO DE ESTUDIANTE junto a los delegados de cada curso se reunieron
 category: daily
