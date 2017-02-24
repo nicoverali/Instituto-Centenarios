@@ -37,11 +37,9 @@ nav_array:
         <hr>
         <div class="post-images">
           {% for image in page.images %}
-          <div class="black-filter">
-            <a href="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" data-lightbox="postsimg">
-              <img class="post-article-image" src="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" alt="{{ post.alt }}">
-            </a>
-          </div>
+          <a href="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" data-lightbox="postsimg">
+            <img class="post-article-image" src="{{ site.baseurl }}/assets/img/daily-page/posts-images/{{ page.date | date: '%Y' }}/{{ image }}.jpg" alt="{{ post.alt }}">
+          </a>
           {% endfor %}
         </div>
       </div>

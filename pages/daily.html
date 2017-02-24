@@ -29,28 +29,38 @@ permalink: /daily/
           <div class="years-limit-container">
             <a href="" class="daily-year not-visible">1998</a>
             <a href="" class="daily-year not-visible">1998</a>
-            {% for post in site.posts %}
+            <!--{% assign myArray = "1" %}
+            {% assign myArray = myArray | append: ",2" %}
+            {% assign myArray = myArray | split:"," %}
+            {{myArray[0]}}-->
+            {% for post in site.posts reversed %}
             {% assign postyear = post.date | date: '%Y' %}
               {% if forloop.first == true %}
                 {% assign actualyear = postyear %}
-                <a href="" class="daily-year">{{actualyear}}</a>
+                {% assign yearsArray = actualyear %}
+              {% elsif forloop.last == true %}
+                {% if postyear != actualyear %}
+                  {% assign yearsArray = yearsArray | append: "," | append: postyear %}
+                {% endif %}
+                {% assign yearsArray = yearsArray | split: "," %}
               {% elsif postyear == actualyear %}
                 {% continue %}
               {% else %}
                 {% assign actualyear = postyear %}
-                <a href="" class="daily-year">{{actualyear}}</a>
+                {% assign yearsArray = yearsArray | append: "," | append: actualyear %}
               {% endif %}
             {% endfor %}
-            <a href="" class="daily-year">{{actualyear}}</a>
-            <a href="" class="daily-year">2007</a>
-            <a href="" class="daily-year">2008</a>
-            <a href="" class="daily-year">2009</a>
-            <a href="" class="daily-year">2010</a>
-            <a href="" class="daily-year">2011</a>
-            <a href="" class="daily-year">2012</a>
-            <a href="" class="daily-year show-on-large">2013</a>
-            <a href="" class="daily-year show">2014</a>
-            <a href="" class="daily-year show selected-year">2015</a>
+            {% for year in yearsArray %}
+              {% if forloop.rindex == 2 %}
+                <a href="" class="daily-year show">{{year}}</a>
+              {% elsif forloop.rindex == 3 %}
+                <a href="" class="daily-year show-on-large">{{year}}</a>
+              {% elsif forloop.last == true %}
+                <a href="" class="daily-year show selected-year">{{year}}</a>
+              {% else %}
+                <a href="" class="daily-year">{{year}}</a>
+              {% endif %}
+            {% endfor %}
             <a href="" class="daily-year not-visible show">1998</a>
             <a href="" class="daily-year not-visible show-on-large">1998</a>
           </div>
