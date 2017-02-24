@@ -29,7 +29,12 @@ nav_array:
     </div>
     <div class="row article-row">
       <div class="col-lg-12">
-        <p class="fecha">{{ page.date | date: "%B %-d, %Y" }}</p>
+        <p class="fecha">
+          {% assign m = page.date | date: "%-m" | minus: 1 %}
+          {% assign spM = site.months[m] %}
+
+          {{ page.date | date: "%-d" }} de {{spM}}{{ page.date | date: ", %Y" }}
+        </p>
         <h1>{{ page.title }}</h1>
         <article class="post-article">
           <p>{{content}}</p>

@@ -96,7 +96,12 @@ permalink: /daily/
                 <div class="daily-image" style="background-image: url({{ site.baseurl }}/assets/img/daily-page/posts-images/{{ postunit.date | date: '%Y' }}/cover-images/{{ postunit.coverimage }}.jpg)">
                 </div>
                 <article class="daily-article">
-                  <p class="fecha">{{ postunit.date | date: "%B %-d, %Y" }}</p>
+                  <p class="fecha">
+                    {% assign m = postunit.date | date: "%-m" | minus: 1 %}
+                    {% assign spM = site.months[m] %}
+
+                    {{ postunit.date | date: "%-d" }} de {{spM}}{{ postunit.date | date: ", %Y" }}
+                  </p>
                   <h2>{{ postunit.title }}</h2>
                   <p>{{ postunit.summary }}</p>
                   {% if site.baseurl.size != 0 %}
