@@ -100,7 +100,7 @@ permalink: /daily/
                   <h2>{{ postunit.title }}</h2>
                   <p>{{ postunit.summary }}</p>
                   {% if site.baseurl.size != 0 %}
-                  <a class="button" href="/{{site.baseurl}}/{{ postunit.url }}">Leer</a>
+                  <a class="button" href="{{ postunit.url | absolute_url }}">Leer</a>
                   {% else %}
                   <a class="button" href="{{ postunit.url }}">Leer</a>
                   {% endif %}
