@@ -104,7 +104,7 @@ function categoryonstart(url){
       containers[2].className = "category-container show";
       iconContainers[2].className = "category-icon-container show";
       break;
-    case "cort":
+    case "cexp":
       containers[3].className = "category-container show";
       iconContainers[3].className = "category-icon-container show";
       break;
