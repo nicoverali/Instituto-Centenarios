@@ -38,5 +38,10 @@
 {% elsif layout.js != nil %}
 <script src="{{site.baseurl}}/js/{{layout.js}}.js"></script>
 {%endif%}
+{% if page.maps == true %}
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUmW4gsq-9O5YWcH8YRy4hb4Ywq8BWe00&callback=initMap">
+</script>
+{% endif %}
 </body>
 </html>
