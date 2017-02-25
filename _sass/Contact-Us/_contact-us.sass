@@ -1,0 +1,48 @@
+section.contact-us
+  background-color: $light-grey
+  min-height: calc(100vh - 95px)
+  .container
+    background-color: white
+    border-radius: 0px 0px 20px 20px
+    .row.title
+      padding: 20px 0px 50px
+      h1
+        text-align: center
+        border-bottom: 2px solid $mainC
+        max-width: 30%
+        margin-left: auto
+        margin-right: auto
+        padding-bottom: 10px
+    .row.info
+      .info-block
+        width: 49%
+        display: inline-block
+        padding: 0px 12%
+        margin-bottom: 50px
+        vertical-align: top
+        .info-title
+          svg
+            width: auto
+            height: 20px
+            vertical-align: middle
+          h3
+            display: inline-block
+            margin: 0px 5px
+            vertical-align: middle
+        .sub-info
+          margin-left: 25px
+          p
+            color: $quote-grey
+            margin: 5px 0px 0px
+            font-weight: 300
+            &::before
+              content: "-"
+              display: inline-block
+              margin-right: 5px
+              vertical-align: text-bottom
+    section.map
+      max-height: 200px
+      #map, iframe
+        height: 200px
+        width: 100%
+        border-radius: 0px 0px 20px 20px
