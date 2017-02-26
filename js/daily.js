@@ -16,26 +16,39 @@ window.addEventListener('DOMContentLoaded', function() {
 
   //Function when clicking left arrow
   leftArrow.addEventListener("click", function(){
-    var doIt = true
     //Run function to select previous year
-    selectYear(0, doIt);
+    selectYear(0);
   });
 
   //Function when clicking right arrow
   rightArrow.addEventListener("click", function(){
-    var doIt = true
     //Run function to select previous year
-    selectYear(1, doIt);
+    selectYear(1);
   });
+
+  //Function when clicking on any year
+  for (var i = 0; i < years.length; i++) {
+    years[i].addEventListener("click", function(item){ selectYear(item.target.innerHTML); })
+  }
 })
 
-function selectYear(direction, doIt){
+function selectYear(direction){
   var actualYear = document.getElementsByClassName("selected-year")[0];
+  var doIt = true;
+  var newYear
   if (direction == 0) {
-    var newYear = actualYear.previousElementSibling;
+    newYear = actualYear.previousElementSibling;
+  }
+  else if(direction == 1) {
+    newYear = actualYear.nextElementSibling;
   }
   else {
-    var newYear = actualYear.nextElementSibling;
+    for (var i = 0; i < years.length; i++) {
+      if(years[i].innerHTML == direction){
+        newYear = years[i]
+        newYear.classList.add("show")
+      }
+    }
   }
   if (newYear.classList.contains("not-visible")) {
     doIt = false;
@@ -44,6 +57,10 @@ function selectYear(direction, doIt){
   if (doIt) {
     actualYear.classList.remove("selected-year");
     newYear.classList.add("selected-year");
+
+    //Cache the newYear
+    sessionStorage.setItem("selectedyear", newYear.innerHTML)
+
     //Run function to set sibiling of the selected year
     sibilingYears();
   }
@@ -78,11 +95,18 @@ function sibilingYears(){
 
 function showPostList(){
   var selectedYear = document.getElementsByClassName("selected-year")[0];
-  document.getElementsByClassName("post-list show")[0].classList.remove("show");
+  if (document.getElementsByClassName("post-list show")[0] != undefined) {
+    document.getElementsByClassName("post-list show")[0].classList.remove("show");
+  }
   document.getElementsByClassName(("post-list ") + selectedYear.innerHTML)[0].classList.add("show")
 }
 
 function startPostList(){
-  var selectedYear = document.getElementsByClassName("selected-year")[0];
-  document.getElementsByClassName(("post-list ") + selectedYear.innerHTML)[0].classList.add("show")
+  if(sessionStorage.selectedyear !== undefined){
+    selectYear(sessionStorage.selectedyear);
+  }
+  else {
+    var selectedYear = document.getElementsByClassName("selected-year")[0];
+    document.getElementsByClassName(("post-list ") + selectedYear.innerHTML)[0].classList.add("show")
+  }
 }

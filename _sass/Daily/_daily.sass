@@ -47,7 +47,8 @@ section.banner-section
         display: inline-block
         position: relative
         margin: 0px 20px
-        a.daily-year
+        cursor: default
+        p.daily-year
           color: $quote-grey
           margin: 0px 15px
           font-family: "Open Sans"
@@ -56,12 +57,14 @@ section.banner-section
           letter-spacing: 4px
           vertical-align: middle
           display: none
+          cursor: pointer
           &.show
             display: inline
           &.show-on-large
             display: inline
           &.not-visible
             visibility: hidden
+            cursor: none
           &.selected-year
             font-size: 28px
             color: white

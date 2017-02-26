@@ -27,8 +27,8 @@ permalink: /daily/
           </div>
 
           <div class="years-limit-container">
-            <a href="" class="daily-year not-visible">1998</a>
-            <a href="" class="daily-year not-visible">1998</a>
+            <p class="daily-year not-visible">1998</p>
+            <p class="daily-year not-visible">1998</p>
             <!--{% assign myArray = "1" %}
             {% assign myArray = myArray | append: ",2" %}
             {% assign myArray = myArray | split:"," %}
@@ -52,17 +52,17 @@ permalink: /daily/
             {% endfor %}
             {% for year in yearsArray %}
               {% if forloop.rindex == 2 %}
-                <a href="" class="daily-year show">{{year}}</a>
+                <p class="daily-year show">{{year}}</p>
               {% elsif forloop.rindex == 3 %}
-                <a href="" class="daily-year show-on-large">{{year}}</a>
+                <p class="daily-year show-on-large">{{year}}</p>
               {% elsif forloop.last == true %}
-                <a href="" class="daily-year show selected-year">{{year}}</a>
+                <p class="daily-year show selected-year">{{year}}</p>
               {% else %}
-                <a href="" class="daily-year">{{year}}</a>
+                <p class="daily-year">{{year}}</p>
               {% endif %}
             {% endfor %}
-            <a href="" class="daily-year not-visible show">1998</a>
-            <a href="" class="daily-year not-visible show-on-large">1998</a>
+            <p class="daily-year not-visible show">1998</p>
+            <p class="daily-year not-visible show-on-large">1998</p>
           </div>
 
           <div class="arrow-svg-container">
