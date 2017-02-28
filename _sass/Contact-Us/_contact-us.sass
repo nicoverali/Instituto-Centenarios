@@ -40,9 +40,70 @@ section.contact-us
               display: inline-block
               margin-right: 5px
               vertical-align: text-bottom
+        .action-block
+          display: none
     section.map
       max-height: 200px
-      #map, iframe
+      #map
         height: 200px
         width: 100%
         border-radius: 0px 0px 20px 20px
+
+@media screen and (max-width: 991px )
+  section.contact-us
+    .container
+      .row.info
+        .info-block
+          padding: 0px 8%
+@media screen and (max-width: 767px )
+  section.contact-us
+    .container
+      .row.title
+        padding: 20px 0px 30px
+        h1
+          max-width: 300px
+      .row.info
+        .info-block
+          display: block
+          width: 100%
+          text-align: center
+          .info-title
+            svg
+              display: block
+              margin-left: auto
+              margin-right: auto
+              margin: 0px auto 5px
+            h3
+              display: block
+          .sub-info
+            margin-left: 0px
+            p
+              margin: 0px
+              &::before
+                display: none
+          .action-block
+            display: block
+            position: relative
+            width: 150px
+            margin-left: auto
+            margin-right: auto
+            border-radius: 5px
+            height: 40px
+            box-shadow: 0px 0px 3px rgba(0,0,0,0.2)
+            cursor: pointer
+            &.email
+              background: #EB0000
+            &.tel
+              background: #34DA49
+            p
+              color: white
+              text-align: center
+              font-family: "Raleway", "Open Sans"
+              font-weight: 400
+              position: relative
+              top: 50%
+              transform: translateY(-50%)
+      section.map
+        border-radius: 0px
+        #map
+          border-radius: 0px

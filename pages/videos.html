@@ -2,13 +2,8 @@
 layout: default
 title: Videos | Instituto Centenarios
 body_class: videos
-show_home: true
 js: videos
-nav_array:
-  - name: Diario escolar
-    url: daily
-  - name: Contactanos
-    url: contact-us
+nav_active: videos
 permalink: /videos/
 ---
 
@@ -57,7 +52,6 @@ permalink: /videos/
         <!--SECTION : Videos-CORTOMETRAJES -->
         <div class="category-container">
           <h2 class="category-title">Cortometrajes</h2>
-          <hr>
           <ul>
             {% for video in site.videos-cortometrajes %}
               {% if forloop.first == true %}
@@ -96,7 +90,6 @@ permalink: /videos/
         <!--SECTION : Videos-VIDEOPOEMAS -->
         <div class="category-container">
           <h2 class="category-title">Videopoemas</h2>
-          <hr>
           <ul>
             {% for video in site.videos-videopoemas %}
               {% if forloop.first == true %}
@@ -135,7 +128,6 @@ permalink: /videos/
         <!--SECTION : Videos-CORTOMETRAJES PATRIOTICOS -->
         <div class="category-container">
           <h2 class="category-title">Cortometrajes patrióticos</h2>
-          <hr>
           <ul>
             {% for video in site.videos-patrioticos %}
               {% if forloop.first == true %}
@@ -174,7 +166,6 @@ permalink: /videos/
         <!--SECTION : Videos-CORTOMETRAJES EXPOSITIVOS-EXPLICATIVOS -->
         <div class="category-container">
           <h2 class="category-title">Cortometrajes expositivos-explicativos</h2>
-          <hr>
           <ul>
             {% for video in site.videos-expositivos %}
               {% if forloop.first == true %}
@@ -213,7 +204,6 @@ permalink: /videos/
         <!--SECTION : Videos-VIDEOS DEL NOTICIERO -->
         <div class="category-container">
           <h2 class="category-title">Videos del noticiero</h2>
-          <hr>
           <ul>
             {% for video in site.videos-noticiero %}
               {% if forloop.first == true %}
