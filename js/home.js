@@ -9,10 +9,6 @@ var logo
 var atrds;
 var atrds_distance = [];
 
-//GLOBAL VARIABLES FOR "articlesText" function
-var pText;
-var articlesButtons;
-
 window.addEventListener("DOMContentLoaded", function(){
 
   //Setting variables ready for "articles_img_appear" function
@@ -34,8 +30,14 @@ window.addEventListener("DOMContentLoaded", function(){
   }
 
   //Setting variables ready for "articlesText" function
-  pText = document.getElementsByClassName("articles-text");
-  articlesButtons = document.getElementsByClassName("articles-button")
+  var articlesButtons = document.getElementsByClassName("articles-button")
+  var returnButtons = document.getElementsByClassName("return-button")
+  for (var i = 0; i < articlesButtons.length; i++) {
+    articlesButtons[i].addEventListener("click", articlesBelt )
+  }
+  for (var i = 0; i < returnButtons.length; i++) {
+    returnButtons[i].addEventListener("click",articlesBelt )
+  }
 
   //Call all functions related to the scrolling
   window.addEventListener("scroll" , scroll_functions_all)
@@ -45,11 +47,9 @@ window.addEventListener("DOMContentLoaded", function(){
 function scroll_functions_all(){
   var scroll_distance = window.scrollY,
       scroll_distance_related_to_window = scroll_distance + window.innerHeight;
-
   logo_appear(scroll_distance);
   articles_img_appear(scroll_distance_related_to_window);
   autoridadesAppear(scroll_distance_related_to_window)
-  articlesText();
 }
 
 
@@ -98,35 +98,72 @@ function autoridadesAppear(scroll) {
 
     }
   }
-
-
 }
 
-function articlesText(){
-  for(var i = 0 ; i < articlesButtons.length ; i++){
-    var actualText = pText[i]
-    articlesButtons[i].addEventListener("click" , buttonHandler)
+function articlesBelt(item){
+  var category = item.target.getAttribute("category");
+  var belt = document.getElementsByClassName("articles-belt")[0];
+  console.log(belt.style.left);
+
+  switch (category) {
+    case "historia":
+      category = "historia";
+      break;
+    case "escudo":
+      category = "escudo"
+      break;
+    case "valores":
+      category = "valores"
+    default:
+      break;
   }
-}
 
-function buttonHandler(item){
-    if(item.target.className == "button articles-button"){
-      item.target.className = "button articles-button activate"
-    }
-    else {
-      item.target.className = "button articles-button"
-    }
-    textHandler();
-}
+  category = document.getElementsByClassName("articles-expanded-row expanded-" + category)[0];
 
-function textHandler(){
-  for(var i = 0 ; i < articlesButtons.length ; i++){
-
-    if(articlesButtons[i].className == "button articles-button activate"){
-      pText[i].className = "articles-text expand";
-    }
-    else {
-      pText[i].className = "articles-text";
-    }
+  if (belt.classList.toggle("expand")) {
+    category.classList.add("show");
+    document.getElementsByClassName("articles-menu")[0].classList.add("hide")
+    //SetTimeout that has the time the transition in CSS has, so it has to be change manually, with whatever is in the CSS at that moment
+    setTimeout(function () {
+      smoothScroll();
+    }, 400);
   }
+  else {
+    document.getElementsByClassName("articles-menu")[0].classList.remove("hide")
+    //SetTimeout that has the time the transition in CSS has, so it has to be change manually, with whatever is in the CSS at that moment
+    setTimeout(function(){
+      document.getElementsByClassName("articles-expanded-row show")[0].classList.remove("show");
+    }, 400)
+
+  }
+
+  function smoothScroll(){
+    var endPos = (document.getElementsByClassName("articles-container")[0].offsetTop - document.getElementsByTagName("header")[0].offsetHeight),
+        startPos = window.scrollY,
+        distance = endPos - startPos,
+        absoluteDistance = Math.abs(distance)
+        divider = 10,
+        step = (absoluteDistance / distance)*divider,
+        time = 1;
+        console.log(distance);
+        console.log(step);
+        timeout();
+
+        function timeout (){
+          var timeoutTimer = 0.0000000000000001
+          if (time <= absoluteDistance/divider && !((time+1) > absoluteDistance/divider)) {
+            window.scrollBy(0, step);
+            time = time+1;
+            setTimeout(function(){timeout();}, timeoutTimer);
+          }
+          else {
+            startPos = window.scrollY;
+            distance = endPos - startPos;
+            window.scrollBy(0,distance);
+          }
+        }
+    //window.scrollTo(0,(document.getElementsByClassName("articles-container")[0].offsetTop - document.getElementsByTagName("header")[0].offsetHeight))
+  }
+
+
 }

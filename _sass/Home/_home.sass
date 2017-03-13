@@ -49,6 +49,75 @@ header
   p
     margin: 10px auto
 
+//Belt Section
+div.articles-container
+  position: relative
+  width: 100%
+  overflow-x: hidden
+  section.articles-belt
+    width: 200%
+    position: relative
+    transition: all 400ms ease-in-out
+    left: 0px
+    &.expand
+      left: -100%
+    div.articles-menu
+      position: relative
+      width: 50%
+      float: left
+      max-height: 1200px
+      overflow: hidden
+      transition: all 100ms ease-in-out
+      &.hide
+        display: block
+        line-height: 0px
+        max-height: 1px
+        transition: all 1s ease-in-out
+    div.articles-expanded
+      position: relative
+      width: 50%
+      float: left
+      .row
+        padding: 0px
+        height: 0px
+        transition: height 800ms ease-in-out
+        overflow: hidden
+        &.show
+          height: 100%
+          padding: 28px
+        a.return-button
+          display: inline-block
+          position: relative
+          top: 10px
+          &.down
+            position: relative
+            bottom: 10px
+            left: 0px
+          svg
+            width: 30px
+            height: auto
+            path
+              fill: $mainC
+        h2
+          padding-bottom: 5px
+          //border-bottom: 2px solid $mainC
+          margin: auto auto
+          text-align: center
+          //max-width: 50%
+        p
+          margin-bottom: 20px
+          min-height: 500px
+          text-align: center
+        .category-svg
+          position: relative
+          display: block
+          text-align: center
+          margin: 20px auto
+          height: 100px
+          width: auto
+          svg
+            height: 100px
+            width: auto
 .wrapper
   img, div
     &.articles-img
@@ -105,17 +174,7 @@ header
 
 
   .articles-text
-    overflow: hidden
     max-height: 300px
-    transition: max-height 700ms ease-in-out
-    &.expand
-      max-height: 1000px
-      .hidden-text
-        display: block
-      .initial-text
-        display: none
-    .hidden-text
-      display: none
   &.autoridades-container
     text-align: center
     h2
@@ -216,3 +275,21 @@ header
     &autoridades-container
       img
         height: 305px
+
+  //BELT SECTION
+  div.articles-container
+    section.articles-belt
+      div.articles-menu
+        max-height: 1500px
+      div.articles-expanded
+        .row
+          &.show
+            padding: 28px 0px
+          a.return-button
+            top: -10px
+
+@media screen and (max-width: 550px)
+  div.articles-container
+    section.articles-belt
+      div.articles-menu
+        max-height: 1800px
