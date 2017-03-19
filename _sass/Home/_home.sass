@@ -178,7 +178,6 @@ div.articles-container
   &.autoridades-container
     text-align: center
     h2
-      margin-bottom: 10px
       margin-top: 0px
     img
       height: 330px
@@ -244,8 +243,26 @@ div.articles-container
       .row
         text-align: center
     h2
-      margin-bottom: 20px
-
+      margin-bottom: 25px
+      margin-left: auto
+      margin-right: auto
+      &::after
+        content: ""
+        display: block
+        margin: 5px auto 0px
+        height: 0px
+        border-bottom: 1px solid $mainC
+        max-width: 60%
+    &.right-left-content
+      h2
+        &::after
+          content: " "
+          border-right: 0px
+          display: block
+          margin: 5px auto 0px
+          height: 0px
+          border-bottom: 1px solid $mainC
+          max-width: 60%
     p
       max-width: initial
       margin-bottom: 40px
@@ -276,6 +293,9 @@ div.articles-container
       img
         height: 305px
 
+  #autoridades-hr
+    display: none
+
   //BELT SECTION
   div.articles-container
     section.articles-belt
@@ -293,3 +313,11 @@ div.articles-container
     section.articles-belt
       div.articles-menu
         max-height: 1800px
+  .wrapper
+    h2
+      &::after
+        max-width: 80%
+    &.right-left-content
+      h2
+        &::after
+          max-width: 80%

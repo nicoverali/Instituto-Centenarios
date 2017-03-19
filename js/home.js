@@ -74,7 +74,7 @@ function logo_appear(scroll){
 
 function articles_img_appear(scroll){
   for(var i = 0 ; i < imgs_distance.length ; i++){
-
+    //Change the number inside the IF CONDITION to set toggle height (Positive is upwards)
     if(scroll > imgs_distance[i] + 100){
       imgs[i].className = "articles-img show"
     }
@@ -82,15 +82,19 @@ function articles_img_appear(scroll){
 }
 
 function autoridadesAppear(scroll) {
+  atrds_distance = [];
+  for(var i = 0 ; i < atrds.length ; i++) {
+    var eachAtrd = atrds[i];
+    eachAtrd = (eachAtrd.offsetTop + eachAtrd.parentNode.parentNode.parentNode.offsetTop );
+    atrds_distance.push(eachAtrd);
+  }
+  console.log(atrds_distance);
   if(document.getElementsByClassName("autoridades-unit show").length == atrds.length){/*Nothing*/}
   else {
+    var timeoutOffset = 0
     for(var i = 0 ; i < atrds_distance.length ; i++){
-        var timeoutOffset = 0
-        if(scroll > atrds_distance[i] + 50){
-          timeoutOffset = timeoutOffset + i
-          if(timeoutOffset >= 3) {
-            timeoutOffset = timeoutOffset-3
-          }
+        if(scroll > atrds_distance[i] + 50 && !(atrds[i].classList.contains("show")) ){
+          timeoutOffset = timeoutOffset + 1
           setTimeout(function(item){
             item.className = "autoridades-unit show";
           } , 150 * (1+timeoutOffset) , atrds[i])
@@ -98,6 +102,7 @@ function autoridadesAppear(scroll) {
 
     }
   }
+  console.log(timeoutOffset);
 }
 
 function articlesBelt(item){

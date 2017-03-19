@@ -34,12 +34,12 @@ window.addEventListener("DOMContentLoaded", function(){
 
   //Setting variable and listener for years list
   years = document.getElementsByClassName("year");
-  videosList = document.getElementsByClassName("videos-list")
-  closeVideos = document.getElementsByClassName("close-videos")
-  moreVideos = document.getElementsByClassName("more-videos")
-  videosContainers = document.getElementsByClassName("video-container")
-  videoUnit = document.getElementsByClassName("video-unit")
-  loadTime = new Array(videosList.length).fill(0)
+  videosList = document.getElementsByClassName("videos-list");
+  closeVideos = document.getElementsByClassName("close-videos");
+  moreVideos = document.getElementsByClassName("more-videos");
+  videosContainers = document.getElementsByClassName("video-container");
+  videoUnit = document.getElementsByClassName("video-unit");
+  loadTime = new Array(videosList.length).fill(0);
   var videosAllArrayNum = 0
   for (var i = 0; i < videoUnit.length; i++) {
 
@@ -189,7 +189,7 @@ function loadMoreVideos(item){
   var iterationNum
   for (var i = 0; i < moreVideos.length; i++) {
     if(moreVideos[i] == item.target){
-      iterationNum = i
+      iterationNum = i;
       break;
     }
   }
@@ -212,10 +212,11 @@ function loadMoreVideos(item){
     }
 
     if (videosAll[iterationNum].length == videoUnitShowCount) {
-      moreVideos[iterationNum].className = "more-videos all-loaded"
+      moreVideos[iterationNum].className = "more-videos all-loaded";
     }
   }
 }
+
 
 function videoModal(item){
 
@@ -234,4 +235,7 @@ function closeModalFunction(){
   modalWindow.className = "modal-window";
 
   document.getElementsByTagName('html')[0].className = "";
+
+  //This fix the problem with going back after you watch a video
+  window.history.back();
 }
