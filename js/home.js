@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function(){
   imgs = document.getElementsByClassName("articles-img");
   for(var i = 0 ; i < imgs.length ; i++) {
     var each_img = imgs[i];
-    each_img = (each_img.parentNode.parentNode.parentNode.offsetTop );
+    each_img = (each_img.parentNode.parentNode.offsetTop + each_img.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.offsetTop );
     imgs_distance.push(each_img);
   }
   //Setting variables ready for "logo_appear" function
@@ -88,7 +88,6 @@ function autoridadesAppear(scroll) {
     eachAtrd = (eachAtrd.offsetTop + eachAtrd.parentNode.parentNode.parentNode.offsetTop );
     atrds_distance.push(eachAtrd);
   }
-  console.log(atrds_distance);
   if(document.getElementsByClassName("autoridades-unit show").length == atrds.length){/*Nothing*/}
   else {
     var timeoutOffset = 0
@@ -102,7 +101,6 @@ function autoridadesAppear(scroll) {
 
     }
   }
-  console.log(timeoutOffset);
 }
 
 function articlesBelt(item){

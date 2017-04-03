@@ -71,6 +71,16 @@ window.addEventListener("DOMContentLoaded", function(){
     }
   }
 
+  //Fix max-height of video-container when resize
+  window.addEventListener("resize", function(){
+    for (var i = 0; i < videosContainers.length; i++) {
+      if (videosContainers[i].classList.contains("show")) {
+        videoListHeight(videosContainers[i]);
+      }
+    }
+
+  })
+
   //Setting variable and listener for videplayer modal
   video = document.getElementById("video");
   closeModal = document.getElementsByClassName("close-modal")[0];
@@ -135,6 +145,7 @@ function activateContainer(item){
 function dropList(item){
   var actualVideoList
   var firstFourVideosVar
+  var close = false
   for (var i = 0; i < years.length; i++) {
     if (item.target == years[i]) {
       actualVideoList = videosList[i]
@@ -144,8 +155,10 @@ function dropList(item){
         videosContainers[i].className = "video-container show"
       }
       else {
-        videosContainers[i].className = "video-container"
-        loadTime[i] = 0
+        close = true;
+        videoListHeight(videosContainers[i], close);
+        videosContainers[i].className = "video-container";
+        loadTime[i] = 0;
       }
 
       if(loadTime[i] == 0){
@@ -162,6 +175,9 @@ function dropList(item){
           moreVideos[i].className = "more-videos all-loaded"
         }
       }
+      if (!close) {
+        videoListHeight(videosContainers[i])
+      }
       break;
     }
   }
@@ -177,6 +193,7 @@ function dropList(item){
 function closeDropList(item){
   for (var i = 0; i < closeVideos.length; i++) {
     if(item.target == closeVideos[i]){
+      videoListHeight(videosContainers[i], true)
       videosContainers[i].className = "video-container";
       years[i].className = "year";
       loadTime[i] = 0;
@@ -187,9 +204,11 @@ function closeDropList(item){
 
 function loadMoreVideos(item){
   var iterationNum
+  var videoContainer
   for (var i = 0; i < moreVideos.length; i++) {
     if(moreVideos[i] == item.target){
       iterationNum = i;
+      videoContainer = videosContainers[i];
       break;
     }
   }
@@ -204,6 +223,7 @@ function loadMoreVideos(item){
 
     if (thisTime < loadTime[iterationNum] && videosAll[iterationNum][i].className != "video-unit show"){
       videosAll[iterationNum][i].className = "video-unit show";
+      videoListHeight(videoContainer)
       thisTime++;
     }
 
@@ -214,6 +234,21 @@ function loadMoreVideos(item){
     if (videosAll[iterationNum].length == videoUnitShowCount) {
       moreVideos[iterationNum].className = "more-videos all-loaded";
     }
+  }
+}
+
+function videoListHeight(container, close) {
+  if (close == true) {
+    container.removeAttribute("style");
+  }
+  else {
+    var childrens = container.children;
+    var totalHeight = 0;
+    for (var i = 0; i < childrens.length; i++) {
+      totalHeight += childrens[i].offsetHeight;
+    }
+    //It has 16px more because the function doesn't take into acount the hr height
+    container.style.maxHeight = ""+(totalHeight + 16)+"px"
   }
 }
 
