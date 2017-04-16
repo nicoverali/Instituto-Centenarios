@@ -1,3 +1,9 @@
+//GLOBAL VARIABLES FOR "latest-news"
+var newsContainerSteps;
+var newsContainerWidth
+var newsContainerPosition;
+var newsContainerMoves = false;
+
 //GLOBAL VARIABLES FOR "articles_img_appear"
 var imgs;
 var imgs_distance = [];
@@ -10,6 +16,30 @@ var atrds;
 var atrds_distance = [];
 
 window.addEventListener("DOMContentLoaded", function(){
+
+  //Setting variables for "latest-news"
+  var news = document.getElementsByClassName("new-wrap");
+  var newsDots = document.getElementsByClassName("dot");
+  var newsContainer = document.getElementsByClassName("news-container")[0];
+  var newsLeftArrow = document.getElementsByClassName("arrow-box")[0];
+  var newsRightArrow = document.getElementsByClassName("arrow-box")[1];
+  var globalNewsContainer = document.getElementsByClassName("global-news-container")[0];
+    //Touch slide
+  touchSlide(globalNewsContainer, newsDots, newsContainer);
+    //Set-up
+  latestNewsSetup(newsContainer, news, newsDots);
+    //Change with arrow
+  newsLeftArrow.addEventListener('click', function(){  newsSlider(0,newsDots,newsContainer);  });
+  newsRightArrow.addEventListener('click', function(){  newsSlider(1,newsDots,newsContainer);  });
+    //Change with dots
+  for (var i = 0; i < newsDots.length; i++) {
+    newsDots[i].addEventListener('click', function(dot){
+      dot = dot.target;
+      slideToDot(dot, newsDots, newsContainer);
+    });
+  }
+    //Change itself with timeout
+  newsSlidesItself(newsDots, newsContainer);
 
   //Setting variables ready for "articles_img_appear" function
   imgs = document.getElementsByClassName("articles-img");
@@ -43,6 +73,150 @@ window.addEventListener("DOMContentLoaded", function(){
   window.addEventListener("scroll" , scroll_functions_all)
   scroll_functions_all();
 })
+
+//---------------END OF 'ONDOCUMENTLOAD'----------------------------------------------------------//
+
+function newsSlidesItself(dots , container){
+  var startPosition = newsContainerPosition;
+  var timeout = 6000
+  var ifChangeTimeout = 15000
+  setTimeout(function () {
+    if (!newsContainerMoves) {
+      newsSlider(1, dots, container, true);
+      newsSlidesItself(dots, container);
+    }
+    else {
+      newsContainerMoves = false;
+      setTimeout(function () {
+        newsSlidesItself(dots,container);
+      }, ifChangeTimeout, dots, container);
+    }
+  }, timeout , dots, container, ifChangeTimeout);
+
+}
+
+function latestNewsSetup(container, news,dots){
+  newsContainerWidth = 0;
+  for (var i = 0; i < news.length; i++) {
+    newsContainerWidth += 100
+    news[i].style.width = ((100 / news.length) + "%")
+  }
+  newsContainerSteps = newsContainerWidth / news.length;
+  newsContainerPosition = 0
+  container.style.width = (newsContainerWidth + "%");
+
+  dots[0].classList.add("selected");
+}
+
+function newsSlider(direction, dots, container, itself){
+  var containerPosition = container.style.left;
+  if (direction == 0) {
+    for (var i = 0; i < dots.length; i++) {
+      if (dots[i].classList.contains('selected')) {
+        dots[i].classList.remove('selected');
+        if (dots[i].previousElementSibling == undefined) {
+          dots[(dots.length - 1)].classList.add('selected');
+          break;
+        }
+        else {
+          dots[i].previousElementSibling.classList.add('selected')
+          break;
+        }
+      }
+    }
+    if ((newsContainerPosition - newsContainerSteps) < 0) {
+      newsContainerPosition = newsContainerWidth - newsContainerSteps
+      container.style.left = "-" + (newsContainerPosition) + "%";
+    }
+    else {
+      newsContainerPosition -= newsContainerSteps
+      container.style.left = "-" + (newsContainerPosition) + "%"
+    }
+  }
+
+  if (direction == 1) {
+    for (var i = 0; i < dots.length; i++) {
+      if (dots[i].classList.contains('selected')) {
+        dots[i].classList.remove('selected');
+        if (dots[i].nextElementSibling == undefined) {
+          dots[0].classList.add('selected');
+          break;
+        }
+        else {
+          dots[i].nextElementSibling.classList.add('selected')
+          break;
+        }
+      }
+    }
+    if ((newsContainerPosition + newsContainerSteps) >= newsContainerWidth) {
+      newsContainerPosition = 0
+      container.style.left = "-" + (newsContainerPosition) + "%";
+    }
+    else {
+      newsContainerPosition += newsContainerSteps
+      container.style.left = "-" + (newsContainerPosition) + "%"
+    }
+  }
+
+  if (!itself) {
+    newsContainerMoves = true;
+  }
+}
+
+function slideToDot(dot, dots, newsContainer){
+  var dotIndex
+  for (var i = 0; i < dots.length; i++) {
+    if ((dots[i] == dot) && !(dots[i].classList.contains('selected'))) {
+      dotIndex = i;
+      dots[i].classList.add('selected');
+      changeNews(dotIndex, newsContainer);
+    }
+    else if (!(dots[i] == dot)) {
+      dots[i].classList.remove("selected");
+    };
+  }
+  function changeNews(index, container){
+    newsContainerPosition = newsContainerSteps * index
+    container.style.left = "-" + (newsContainerPosition) + "%"
+  }
+}
+
+function touchSlide(container, dots, newsContainer){
+  var touchSurface = container,
+      startX,
+      startY,
+      dist,
+      threshold = 50, //required min distance traveled to be considered swipe
+      allowedTime = 200, // maximum time allowed to travel that distance
+      allowedVertical = 100,
+      elapsedTime,
+      startTime
+
+  touchSurface.addEventListener('touchstart', function(e){
+    var touch = e.changedTouches[0];
+    startX = touch.pageX;
+    startY = touch.pageY
+    startTime = new Date().getTime();
+    console.log("it starts");
+  })
+  touchSurface.addEventListener('touchmove', function(e){
+  })
+  touchSurface.addEventListener('touchend', function(e){
+
+    var touch = e.changedTouches[0];
+    dist = touch.pageX - startX;
+    distV = Math.abs(touch.pageY - startY)
+    elapsedTime = new Date().getTime() - startTime;
+    if ((Math.abs(dist) >= threshold) && (elapsedTime <= allowedTime) && (distV <= allowedVertical)) {
+      if (dist > 0) {
+        newsSlider(0, dots,newsContainer)
+      }
+      else {
+        newsSlider(1, dots,newsContainer)
+      }
+    }
+  })
+}
 
 function scroll_functions_all(){
   var scroll_distance = window.scrollY,

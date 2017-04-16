@@ -15,6 +15,7 @@ collections:
   videos-patrioticos:
   videos-expositivos:
   videos-noticiero:
+  latest-news:
 months:
   - Enero
   - Febrero
