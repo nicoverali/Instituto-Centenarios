@@ -187,7 +187,7 @@ function touchSlide(container, dots, newsContainer){
       startY,
       dist,
       threshold = 50, //required min distance traveled to be considered swipe
-      allowedTime = 200, // maximum time allowed to travel that distance
+      allowedTime = 500, // maximum time allowed to travel that distance
       allowedVertical = 100,
       elapsedTime,
       startTime
@@ -213,6 +213,14 @@ function touchSlide(container, dots, newsContainer){
       }
       else {
         newsSlider(1, dots,newsContainer)
+      }
+    }
+    else if ((Math.abd(dist) < 200) && (elapsedTime <= allowedTime) && (distV <= 20)) {
+      if (dist > 0) {
+        newsSlider(1, dots,newsContainer)
+      }
+      else {
+        newsSlider(0, dots,newsContainer)
       }
     }
   })
