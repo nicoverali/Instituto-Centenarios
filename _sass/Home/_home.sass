@@ -243,8 +243,6 @@ div.articles-container
     text-align: center
     h2
       margin-top: 0px
-    img
-      height: 330px
     ul
       list-style-type: none
       padding: 0px
@@ -257,8 +255,15 @@ div.articles-container
     .autoridades-unit
       transition: opacity 700ms ease-in-out , transform 700ms ease-in-out
       opacity: 0
+      width: 251px
       &.show
         opacity: 1
+      div.autoridades-img
+        height: 330px
+        width: 100%
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
     .autoridades-descripcion
       text-align: left
       vertical-align: middle
@@ -390,7 +395,7 @@ div.articles-container
               margin-bottom: 0px
               text-align: center
             ul
-              text-align: left            
+              text-align: left
     div.news-dots
       left: 0%
       transform: translateX(0%)
