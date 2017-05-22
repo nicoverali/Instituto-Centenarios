@@ -1,19 +1,11 @@
 ---
 layout: post
-coverimage:
+coverimage: elecresul
 title: Resultado de las elecciones
 summary: Así quedó conformado el Centro de Estudiantes 2011
 category: daily
 alt: resultados-de-eleccion
 images:
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
 ---
 
 Las elecciones se realizaron el 6 de abril (desde las 8.15 hasta las 14:30 horas)

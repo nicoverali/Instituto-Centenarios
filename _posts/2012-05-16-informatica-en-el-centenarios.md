@@ -1,19 +1,11 @@
 ---
 layout: post
-coverimage:
+coverimage: informatica
 title: Informática en el Instituto "Centenarios"
 summary: En la materia Informática, durante los meses de marzo y abril los alumnos de 1.°, 2.° y 3.°  de la Secundaria básica del Instituto “Centenarios” estuvieron trabajando con el análisis de distintos tipos de noticias.
 category: daily
 alt: informatica-noticias
 images:
-  -
-  -
-  -
-  -
-  -
-  -
-  -
-  -
 ---
 
 En la materia Informática, durante los meses de marzo y abril los alumnos de 1.°, 2.° y 3.°  de la Secundaria básica del Instituto “Centenarios” estuvieron trabajando con el análisis de distintos tipos de noticias.
