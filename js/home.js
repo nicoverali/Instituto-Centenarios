@@ -20,26 +20,30 @@ window.addEventListener("DOMContentLoaded", function(){
   //Setting variables for "latest-news"
   var news = document.getElementsByClassName("new-wrap");
   var newsDots = document.getElementsByClassName("dot");
-  var newsContainer = document.getElementsByClassName("news-container")[0];
-  var newsLeftArrow = document.getElementsByClassName("arrow-box")[0];
-  var newsRightArrow = document.getElementsByClassName("arrow-box")[1];
-  var globalNewsContainer = document.getElementsByClassName("global-news-container")[0];
-    //Touch slide
-  touchSlide(globalNewsContainer, newsDots, newsContainer);
-    //Set-up
-  latestNewsSetup(newsContainer, news, newsDots);
-    //Change with arrow
-  newsLeftArrow.addEventListener('click', function(){  newsSlider(0,newsDots,newsContainer);  });
-  newsRightArrow.addEventListener('click', function(){  newsSlider(1,newsDots,newsContainer);  });
-    //Change with dots
-  for (var i = 0; i < newsDots.length; i++) {
-    newsDots[i].addEventListener('click', function(dot){
-      dot = dot.target;
-      slideToDot(dot, newsDots, newsContainer);
-    });
+  var areNewsToShow = !(newsDots.size == undefined);
+  if (areNewsToShow){  //Unless theres no news to show, continue with the functions, if not don't do anything;
+    var newsContainer = document.getElementsByClassName("news-container")[0];
+    var newsLeftArrow = document.getElementsByClassName("arrow-box")[0];
+    var newsRightArrow = document.getElementsByClassName("arrow-box")[1];
+    var globalNewsContainer = document.getElementsByClassName("global-news-container")[0];
+      //Touch slide
+    touchSlide(globalNewsContainer, newsDots, newsContainer);
+      //Set-up
+    latestNewsSetup(newsContainer, news, newsDots);
+      //Change with arrow
+    newsLeftArrow.addEventListener('click', function(){  newsSlider(0,newsDots,newsContainer);  });
+    newsRightArrow.addEventListener('click', function(){  newsSlider(1,newsDots,newsContainer);  });
+      //Change with dots
+    for (var i = 0; i < newsDots.length; i++) {
+      newsDots[i].addEventListener('click', function(dot){
+        dot = dot.target;
+        slideToDot(dot, newsDots, newsContainer);
+      });
+    }
+      //Change itself with timeout
+    newsSlidesItself(newsDots, newsContainer);
   }
-    //Change itself with timeout
-  newsSlidesItself(newsDots, newsContainer);
+
 
   //Setting variables ready for "articles_img_appear" function
   imgs = document.getElementsByClassName("articles-img");
