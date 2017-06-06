@@ -1,7 +1,7 @@
 markdown: kramdown
 title: Instituto Centenarios Web
 author: Vera Nicolás A.
-baseurl: /Instituto-Centenarios
+baseurl:
 description: Base Branding Project
 keywords: Base, Branding, Project
 exclude: ['README.md']
