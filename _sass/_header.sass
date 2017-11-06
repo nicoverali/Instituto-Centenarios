@@ -72,35 +72,37 @@ header
   header
     &.opened
       max-height: 500px
-    nav
-      padding-top: 55px
-      a
-        display: block
-        &.nav-sections
-          margin: 0px -15px
-          padding: 19px 15px
-          border: 0px solid
-        &.nav-sections:nth-of-type(1):not(.nav-home-icon)
-          background-color: darken($mainC, 4)
-        &.nav-sections:nth-of-type(2):not(.nav-home-icon)
-          background-color: darken($mainC, 8)
-        &.nav-sections:nth-of-type(3):not(.nav-home-icon)
-          background-color: darken($mainC, 12)
-        &.nav-sections:hover
-          border-bottom: 1px solid white
-        img, svg
-          width: 25px
-          height: 25px
-        &.burguer-nav , &.nav-home-icon
-          display: inline-block
-          background-color: rgba(255,255,255,0.0)
-          position: absolute
-          padding: 15px 15px
-          right: 0
-          top: 0
-          margin-right: 0px
-        &.burguer-nav:hover , &.nav-home-icon:hover
-          background: rgba(255,255,255,0)
-          border-bottom: 0px solid white
-        &.nav-home-icon
-          right: 50px
+    .container#header-container
+      width: 100%
+      nav
+        padding-top: 55px
+        a
+          display: block
+          &.nav-sections
+            margin: 0px -15px
+            padding: 19px 15px
+            border: 0px solid
+          &.nav-sections:nth-of-type(1):not(.nav-home-icon)
+            background-color: darken($mainC, 4)
+          &.nav-sections:nth-of-type(2):not(.nav-home-icon)
+            background-color: darken($mainC, 8)
+          &.nav-sections:nth-of-type(3):not(.nav-home-icon)
+            background-color: darken($mainC, 12)
+          &.nav-sections:hover
+            border-bottom: 1px solid white
+          img, svg
+            width: 25px
+            height: 25px
+          &.burguer-nav , &.nav-home-icon
+            display: inline-block
+            background-color: rgba(255,255,255,0.0)
+            position: absolute
+            padding: 15px 15px
+            right: 0
+            top: 0
+            margin-right: 0px
+          &.burguer-nav:hover , &.nav-home-icon:hover
+            background: rgba(255,255,255,0)
+            border-bottom: 0px solid white
+          &.nav-home-icon
+            right: 50px
