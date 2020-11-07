@@ -36,9 +36,11 @@ js: home
       <div class="container">
         <div class="row">
           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 news-arrow-container user-non-selectable">
+            {% if site.latest-news.size > 1 %}
             <div class="arrow-box">
               {% include _svg/_left-arrowsvg.html %}
             </div>
+            {% endif %}
           </div>
           <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-8 col-sm-offset-1 col-xs-12">
             <div class="global-news-container">
@@ -46,6 +48,7 @@ js: home
                 {% for new in site.latest-news %}
                 <div class="new-wrap">
                   <h2 class="news-title">{{new.title}}</h2>
+                  <h4 class="news-subtitle">{{new.subtitle}}</h4>
                   <div class="news-article">{{new.content}}</div>
                 </div>
                 {% endfor %}
@@ -53,10 +56,13 @@ js: home
             </div>
           </div>
           <div class="col-lg-1 col-lg-offset-1 col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 col-xs-offset-1 col-xs-1 user-non-selectable news-arrow-container">
+            {% if site.latest-news.size > 1 %}
             <div class="arrow-box">
               {% include _svg/_right-arrowsvg.html %}
             </div>
+            {% endif %}
           </div>
+          {% if site.latest-news.size > 1 %}
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 user-non-selectable">
             <div class="news-dots">
               {% for new in site.latest-news %}
@@ -64,6 +70,7 @@ js: home
               {% endfor %}
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </section>
