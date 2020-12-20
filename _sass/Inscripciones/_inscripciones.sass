@@ -1,0 +1,104 @@
+section.sorteo
+    min-height: calc(100vh - 95px)    
+    .wrapper
+        padding-top: 20px
+        &.container
+            overflow: hidden
+        .title-row
+            text-align: center
+            margin-bottom: 40px
+            h1
+                border-bottom: 2px solid $mainC
+                padding-bottom: 10px
+                max-width: 60%
+                text-align: center
+                margin-left: auto
+                margin-right: auto
+            @media screen and ( max-width: 600px )
+                h1
+                    max-width: 100%
+        
+        .slide-tabs
+
+            .tabs-container
+                list-style-type: none
+                padding: 0 48px
+                max-width: 600px
+                display: flex
+                margin: auto
+                .tab
+                    display: inline-block
+                    margin: 0 16px
+                    height: 42px
+                    flex-grow: 1
+                    flex-basis: 0
+                    border-bottom: 2px solid rgba(0,0,0,0.3)
+                    text-align: center
+                    cursor: pointer
+                    transition: border-bottom 200ms ease-in
+
+                    &.selected
+                        border-bottom: 2px solid $mainC
+
+
+        .slide-container
+            width: 200%
+            position: relative
+            display: flex
+            flex-direction: row
+            align-items: flex-start
+            left: -80%
+            transition: left 400ms ease-in-out, height 200ms ease-out
+
+            .slide-child
+                position: relative
+                padding: 64px
+                width: 50%
+                display: inline-block
+                .etapa-text
+                    width: 60%
+                    display: inline-block
+                    vertical-align: top
+                    ul
+                        text-align: left
+                .etapa-button
+                    width: 39%
+                    display: inline-block
+                    vertical-align: top
+                    .download-box
+                        max-width: 400px
+                        padding: 24px
+                        margin: 24px
+                        border: 1px solid #e9e9e9
+                        background-color: #f1f1f1
+                        border-radius: 5px
+                        text-align: center
+                        h4
+                            font-weight: 600
+                            margin: 16px
+                        p
+                            text-align: center
+                            display: block
+                            margin-bottom: 16px
+                        ul.docs-list
+                            text-align: left
+                        a.button
+                            margin-top: 8px
+                @media screen and ( max-width: 991px )
+                    .etapa-text
+                        width: 50%
+                        display: inline-block
+                        vertical-align: top
+                    .etapa-button
+                        width: 49%
+                        display: inline-block
+                        vertical-align: top
+                @media screen and ( max-width: 767px )
+                    .etapa-text
+                        width: 100%
+                        display: inline-block
+                        vertical-align: top
+                    .etapa-button
+                        width: auto
+                        display: inline-block
+                        vertical-align: top
