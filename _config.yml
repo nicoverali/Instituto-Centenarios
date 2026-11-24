@@ -4,7 +4,10 @@ author: Vera Nicolás A.
 baseurl:
 description: Base Branding Project
 keywords: Base, Branding, Project
-exclude: ['README.md']
+exclude:
+  - README.md
+  - .bundle
+  - vendor
 sass:
     sass_dir: _sass
     style: compressed
